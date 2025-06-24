@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intan Nurhidayah</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Montserrat", "sans-serif"],
+              cursive: ["Dancing Script", "cursive"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      crossorigin="anonymous"
+    />
+
+    <!-- Glow Effect -->
+    <style>
+      body {
+        font-family: "Montserrat", sans-serif;
+      }
+      .glow-text {
+        color: #fff;
+        text-shadow: 0 0 6px rgba(255, 182, 193, 0.6),
+          0 0 12px rgba(255, 182, 193, 0.5), 0 0 20px rgba(236, 72, 153, 0.4);
+      }
+      .glow-subtle {
+        text-shadow: 0 0 4px rgba(255, 192, 203, 0.3);
+      }
+    </style>
+  </head>
+
+  <body class="bg-transparent text-white italic">
+    <!-- Preloader -->
+    <div
+      id="preloader"
+      class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/70 backdrop-blur-sm text-white opacity-100 transition-opacity duration-700"
+    >
+      <!-- Gambar Loader -->
+      <img
+        src="assets/img/loading.gif"
+        alt="Loading..."
+        class="w-20 h-20 mb-4"
+      />
+      <!-- Teks Loader -->
+      <p class="text-lg animate-pulse">Intan Nurhidayah...</p>
+    </div>
+
+    <!-- Background Video -->
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      class="fixed top-0 left-0 w-full h-full object-cover -z-20"
+    >
+      <source src="assets/media/bg.mp4" type="video/mp4" />
+    </video>
+    <div
+      class="fixed top-0 left-0 w-full h-full bg-black/60 dark:bg-black/70 backdrop-blur-sm -z-10"
+    ></div>
+
+    <div class="relative z-10">
+      <header
+        class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur shadow text-gray-800 dark:text-white"
+      >
+        <div
+          class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between"
+        >
+          <!-- Kiri: Logo -->
+          <div
+            class="flex items-center gap-2 text-pink-500 font-bold text-lg glow-text"
+          >
+            <i class="fas fa-heart"></i>
+            <span>Intan Nurhidayah</span>
+          </div>
+
+          <!-- Tengah: Navigasi -->
+          <nav
+            class="hidden md:flex gap-6 text-sm font-medium dark:text-white glow-subtle"
+          >
+            <a href="/" class="hover:text-pink-400 flex items-center gap-1"
+              ><i class="fas fa-home"></i>
+              <span data-i18n="nav.home">Beranda</span></a
+            >
+            <a
+              href="/about/"
+              class="hover:text-pink-400 flex items-center gap-1"
+              ><i class="fas fa-user"></i>
+              <span data-i18n="nav.about">Tentang</span></a
+            >
+            <a
+              href="/story/"
+              class="hover:text-pink-400 flex items-center gap-1"
+              ><i class="fas fa-book-open"></i>
+              <span data-i18n="nav.story">Cerita</span></a
+            >
+            <a
+              href="/gallery/"
+              class="hover:text-pink-400 flex items-center gap-1"
+              ><i class="fas fa-images"></i>
+              <span data-i18n="nav.gallery">Galeri</span></a
+            >
+          </nav>
+          <!-- Kanan: Toggle -->
+          <div class="flex items-center gap-2">
+            <button
+              id="langToggle"
+              class="px-2 py-1 bg-white dark:bg-gray-700 text-pink-500 dark:text-white rounded-full border shadow text-xs md:text-sm"
+            >
+              <i class="fas fa-globe"></i> <span id="langText">ID</span>
+            </button>
+            <button id="themeToggle" class="text-lg md:text-xl">
+              <i
+                id="themeIcon"
+                class="fas fa-moon text-purple-600 dark:text-white"
+              ></i>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Top Toggle
+    <div class="fixed top-[64px] left-0 right-0 z-40 px-4 py-2 flex justify-between bg-gradient-to-r from-pink-100/70 to-purple-100/70 dark:from-gray-800/80 dark:to-gray-700/80 backdrop-blur shadow text-gray-800 dark:text-white">
+      <button id="langToggle" class="px-3 py-1 bg-white dark:bg-gray-700 text-pink-500 dark:text-white rounded-full border shadow">
+        <i class="fas fa-globe"></i> <span id="langText">ID</span>
+      </button>
+      <button id="themeToggle" class="text-xl">
+        <i id="themeIcon" class="fas fa-moon text-purple-600 dark:text-white"></i>
+      </button>
+    </div> -->
+
+      <!-- Hero Section -->
+      <div
+        class="min-h-screen flex flex-col justify-center items-center text-center px-4 pt-[180px]"
+      >
+        <div class="-mt-20 z-10">
+          <img
+            src="assets/img/intan.png"
+            alt="Intan"
+            class="w-32 h-32 md:w-36 md:h-36 rounded-full border-4 border-white shadow-lg mx-auto"
+          />
+        </div>
+
+        <h1
+          id="typingTitle"
+          class="text-4xl md:text-5xl font-bold font-cursive mt-4 whitespace-nowrap overflow-hidden border-r-2 border-white glow-text"
+          data-i18n="hero.title"
+        ></h1>
+
+        <p
+          id="typingSubtitle"
+          class="text-lg md:text-xl max-w-lg mt-2 glow-subtle"
+          data-i18n="hero.subtitle"
+        ></p>
+
+        <a
+          href="/cerita/"
+          id="typingCTA"
+          class="mt-6 px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-full shadow-lg font-semibold hover:scale-105 transition glow-subtle"
+          data-i18n="hero.cta"
+        ></a>
+
+        <div
+          class="mt-10 text-center max-w-xl mx-auto text-sm text-white/80 italic leading-relaxed"
+        >
+          <p
+            id="typingLine1"
+            class="glow-subtle"
+            data-i18n="preview.dedication.line1"
+          ></p>
+          <p
+            id="typingLine2"
+            class="glow-subtle"
+            data-i18n="preview.dedication.line2"
+          ></p>
+          <p
+            id="typingLine3"
+            class="glow-subtle"
+            data-i18n="preview.dedication.line3"
+          ></p>
+          <p
+            id="typingLine4"
+            class="glow-subtle"
+            data-i18n="preview.dedication.line4"
+          ></p>
+        </div>
+      </div>
+
+      <!-- About -->
+      <div
+        id="about"
+        class="py-20 px-6 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md text-gray-900 dark:text-white"
+      >
+        <div
+          class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-center text-center gap-10 rounded-xl p-6 shadow-lg"
+        >
+          <!-- Foto Bulat -->
+          <img
+            src="assets/img/intan-new.png"
+            alt="Tentang Intan"
+            class="w-48 h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-white/70 shadow-xl bg-white/10 backdrop-blur"
+          />
+
+          <!-- Konten Teks -->
+          <div class="flex flex-col items-center justify-center">
+            <h2
+              class="text-3xl font-bold mb-4 glow-text"
+              data-i18n="preview.about.title"
+            >
+              Tentang Intan
+            </h2>
+            <p
+              class="mb-6 glow-subtle max-w-md"
+              data-i18n="preview.about.desc"
+            ></p>
+            <a
+              href="/about/"
+              class="inline-block px-6 py-3 bg-pink-500 text-white rounded-full font-semibold shadow hover:scale-105 transition glow-subtle"
+              data-i18n="preview.about.cta"
+            >
+              Lihat Selengkapnya
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Story -->
+      <div
+        id="story"
+        class="py-20 px-6 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md text-gray-900 dark:text-white"
+      >
+        <div
+          class="max-w-5xl mx-auto flex flex-col md:flex-row-reverse items-center justify-center gap-10 rounded-xl p-6 shadow-lg"
+        >
+          <!-- Gambar -->
+          <img
+            src="assets/img/story.png"
+            alt="Cerita Kami"
+            class="w-48 h-48 md:w-64 md:h-64 rounded-xl object-cover shadow-lg border-4 border-white/50 bg-white/10 backdrop-blur"
+          />
+
+          <!-- Konten Teks -->
+          <div
+            class="flex flex-col items-center justify-center text-center md:items-start md:text-left max-w-lg"
+          >
+            <h2
+              class="text-3xl font-bold mb-4 glow-text"
+              data-i18n="preview.story.title"
+            >
+              Cerita Kami
+            </h2>
+            <p class="mb-6 glow-subtle" data-i18n="preview.story.desc">
+              Cerita tentang sebelas pertemuan yang menyusun satu garis kisah
+              kita — dari tawa, hujan, hingga malam takbiran.
+            </p>
+            <a
+              href="/story/"
+              class="inline-block px-6 py-3 bg-purple-600 text-white rounded-full font-semibold shadow hover:scale-105 transition glow-subtle"
+              data-i18n="preview.story.cta"
+            >
+              Baca Cerita
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery -->
+      <div
+        id="gallery"
+        class="py-20 px-6 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md text-gray-900 dark:text-white"
+      >
+        <div
+          class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center gap-10 rounded-xl p-6 shadow-lg"
+        >
+          <!-- Gambar Galeri -->
+          <div class="w-full md:w-1/2 flex justify-center">
+            <img
+              src="assets/img/gallery.jpg"
+              alt="Galeri Intan"
+              class="rounded-full border-4 border-white/40 shadow-lg w-60 h-60 object-cover"
+            />
+          </div>
+
+          <!-- Konten Galeri -->
+          <div class="text-center md:text-left w-full md:w-1/2">
+            <h2
+              class="text-3xl font-bold mb-4 glow-text"
+              data-i18n="preview.gallery.title"
+            >
+              Galeri Intan
+            </h2>
+            <p
+              class="mb-6 glow-subtle text-white/90"
+              data-i18n="preview.gallery.desc"
+            >
+              Potret momen-momen yang kita abadikan dalam bingkai kenangan.
+            </p>
+            <a
+              href="/gallery/"
+              class="inline-block px-5 py-3 bg-pink-600 text-white rounded-full font-semibold shadow hover:scale-105 transition glow-subtle"
+              data-i18n="preview.gallery.cta"
+            >
+              Lihat Galeri
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 17 Pertemuan -->
+      <div id="moments" class="py-20 px-6 text-white max-w-4xl mx-auto">
+        <h2
+          class="text-3xl font-bold text-center mb-12 glow-text"
+          data-i18n="moments.title"
+        >
+          11 Pertemuan, 11 Cerita
+        </h2>
+
+        <div class="space-y-8">
+          <div
+            class="flex items-start gap-4 p-4 bg-white/10 rounded-lg hover:bg-white/20 transition"
+          >
+            <i class="fas fa-mug-hot text-pink-400 text-2xl mt-1"></i>
+            <p
+              class="glow-subtle text-white/90 text-base"
+              data-i18n="moments.item1"
+            ></p>
+          </div>
+          <div
+            class="flex items-start gap-4 p-4 bg-white/10 rounded-lg hover:bg-white/20 transition"
+          >
+            <i class="fas fa-fire text-red-400 text-2xl mt-1"></i>
+            <p
+              class="glow-subtle text-white/90 text-base"
+              data-i18n="moments.item2"
+            ></p>
+          </div>
+          <div
+            class="flex items-start gap-4 p-4 bg-white/10 rounded-lg hover:bg-white/20 transition"
+          >
+            <i class="fas fa-store text-purple-400 text-2xl mt-1"></i>
+            <p
+              class="glow-subtle text-white/90 text-base"
+              data-i18n="moments.item3"
+            ></p>
+          </div>
+          <div
+            class="flex items-start gap-4 p-4 bg-white/10 rounded-lg hover:bg-white/20 transition"
+          >
+            <i class="fas fa-utensils text-yellow-300 text-2xl mt-1"></i>
+            <p
+              class="glow-subtle text-white/90 text-base"
+              data-i18n="moments.item4"
+            ></p>
+          </div>
+          <div
+            class="flex items-start gap-4 p-4 bg-white/10 rounded-lg hover:bg-white/20 transition"
+          >
+            <i class="fas fa-road text-green-400 text-2xl mt-1"></i>
+            <p
+              class="glow-subtle text-white/90 text-base"
+              data-i18n="moments.item5"
+            ></p>
+          </div>
+          <div
+            class="flex items-start gap-4 p-4 bg-white/10 rounded-lg hover:bg-white/20 transition"
+          >
+            <i class="fas fa-tree text-emerald-300 text-2xl mt-1"></i>
+            <p
+              class="glow-subtle text-white/90 text-base"
+              data-i18n="moments.item6"
+            ></p>
+          </div>
+          <div
+            class="flex items-start gap-4 p-4 bg-white/10 rounded-lg hover:bg-white/20 transition"
+          >
+            <i class="fas fa-film text-indigo-300 text-2xl mt-1"></i>
+            <p
+              class="glow-subtle text-white/90 text-base"
+              data-i18n="moments.item7"
+            ></p>
+          </div>
+          <div
+            class="flex items-start gap-4 p-4 bg-white/10 rounded-lg hover:bg-white/20 transition"
+          >
+            <i class="fas fa-utensils text-pink-300 text-2xl mt-1"></i>
+            <p
+              class="glow-subtle text-white/90 text-base"
+              data-i18n="moments.item8"
+            ></p>
+          </div>
+          <div
+            class="flex items-start gap-4 p-4 bg-white/10 rounded-lg hover:bg-white/20 transition"
+          >
+            <i class="fas fa-shopping-cart text-yellow-300 text-2xl mt-1"></i>
+            <p
+              class="glow-subtle text-white/90 text-base"
+              data-i18n="moments.item9"
+            ></p>
+          </div>
+          <div
+            class="flex items-start gap-4 p-4 bg-white/10 rounded-lg hover:bg-white/20 transition"
+          >
+            <i class="fas fa-motorcycle text-orange-300 text-2xl mt-1"></i>
+            <p
+              class="glow-subtle text-white/90 text-base"
+              data-i18n="moments.item10"
+            ></p>
+          </div>
+          <div
+            class="flex items-start gap-4 p-4 bg-white/10 rounded-lg hover:bg-white/20 transition"
+          >
+            <i class="fas fa-cloud-rain text-blue-300 text-2xl mt-1"></i>
+            <p
+              class="glow-subtle text-white/90 text-base"
+              data-i18n="moments.item11"
+            ></p>
+          </div>
+
+          <!-- Pertemuan 12 -->
+          <div
+            class="flex items-start gap-4 p-4 bg-white/10 rounded-lg hover:bg-white/20 transition"
+          >
+            <i class="fas fa-house-user text-fuchsia-300 text-2xl mt-1"></i>
+            <p
+              class="glow-subtle text-white/90 text-base"
+              data-i18n="moments.item12"
+            ></p>
+          </div>
+
+          <!-- Pertemuan 13 -->
+          <div
+            class="flex items-start gap-4 p-4 bg-white/10 rounded-lg hover:bg-white/20 transition"
+          >
+            <i class="fas fa-map-marked-alt text-cyan-300 text-2xl mt-1"></i>
+            <p
+              class="glow-subtle text-white/90 text-base"
+              data-i18n="moments.item13"
+            ></p>
+          </div>
+
+          <!-- Pertemuan 14 -->
+          <div
+            class="flex items-start gap-4 p-4 bg-white/10 rounded-lg hover:bg-white/20 transition"
+          >
+            <i class="fas fa-moon text-purple-400 text-2xl mt-1"></i>
+            <p
+              class="glow-subtle text-white/90 text-base"
+              data-i18n="moments.item14"
+            ></p>
+          </div>
+
+          <!-- Pertemuan 15 -->
+          <div
+            class="flex items-start gap-4 p-4 bg-white/10 rounded-lg hover:bg-white/20 transition"
+          >
+            <i class="fas fa-heartbeat text-red-300 text-2xl mt-1"></i>
+            <p
+              class="glow-subtle text-white/90 text-base"
+              data-i18n="moments.item15"
+            ></p>
+          </div>
+
+          <!-- Pertemuan 16 -->
+          <div
+            class="flex items-start gap-4 p-4 bg-white/10 rounded-lg hover:bg-white/20 transition"
+          >
+            <i class="fas fa-clock text-teal-300 text-2xl mt-1"></i>
+            <p
+              class="glow-subtle text-white/90 text-base"
+              data-i18n="moments.item16"
+            ></p>
+          </div>
+
+          <!-- Pertemuan 17 -->
+          <div
+            class="flex items-start gap-4 p-4 bg-white/10 rounded-lg hover:bg-white/20 transition"
+          >
+            <i class="fas fa-map text-pink-300 text-2xl mt-1"></i>
+            <p
+              class="glow-subtle text-white/90 text-base"
+              data-i18n="moments.item17"
+            ></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Navigation (Mobile) -->
+      <nav
+        class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-gray-800/90 backdrop-blur border-t border-gray-300 dark:border-gray-600 shadow z-50 md:hidden text-gray-800 dark:text-white"
+      >
+        <ul class="flex justify-around text-sm">
+          <li>
+            <a href="/" class="flex flex-col items-center py-2 text-pink-500"
+              ><i class="fas fa-home"></i
+              ><span data-i18n="nav.home">Beranda</span></a
+            >
+          </li>
+          <li>
+            <a href="/about" class="flex flex-col items-center py-2"
+              ><i class="fas fa-user"></i
+              ><span data-i18n="nav.about">Tentang</span></a
+            >
+          </li>
+          <li>
+            <a href="/story/" class="flex flex-col items-center py-2"
+              ><i class="fas fa-book-open"></i
+              ><span data-i18n="nav.story">Cerita</span></a
+            >
+          </li>
+          <li>
+            <a href="/gallery/" class="flex flex-col items-center py-2"
+              ><i class="fas fa-images"></i
+              ><span data-i18n="nav.gallery">Galeri</span></a
+            >
+          </li>
+          <li>
+            <button
+              id="langToggleMobileNav"
+              class="flex flex-col items-center py-2"
+            >
+              <i class="fas fa-globe"></i><span id="langTextMobileNav">ID</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <footer
+        class="hidden md:block bg-white/80 dark:bg-gray-900/80 backdrop-blur border-t border-gray-300 dark:border-gray-700 text-center text-sm text-gray-600 dark:text-gray-300 py-6 mt-16"
+      >
+        <p>
+          &copy; <span id="year"></span>
+          <span data-i18n="footer.line1">Dibuat dengan ❤️ untuk</span>
+          <strong>Intan Nurhidayah</strong>
+        </p>
+        <p class="mt-1" data-i18n="footer.line2">Bekasi ✦ Ciangsana ✦ Bogor</p>
+      </footer>
+    </div>
+    <!-- End of content wrapper -->
+
+    <!-- Footer Year -->
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+    <!-- JavaScript: Theme & Language Toggle -->
+    <script>
+      const i18nText = {
+        id: {
+          hero: {
+            title: "Intan Nurhidayah",
+            subtitle:
+              "Kisah dari tujuh belas pertemuan yang tak pernah gagal membuatku bersyukur telah mengenalmu",
+            cta: "Lihat Cerita Kita",
+          },
+          preview: {
+            about: {
+              title: "Tentang Intan",
+              desc: "Sedikit pengenalan tentang siapa Intan dan perjalanan hidup yang ia jalani...",
+              cta: "Lihat Selengkapnya",
+            },
+            story: {
+              title: "Cerita Kami",
+              desc: "Tujuh belas momen yang membentuk satu kisah tentang pertemuan, rasa hangat, dan kenangan yang tak terlupa.",
+              cta: "Baca Cerita",
+            },
+            gallery: {
+              title: "Galeri Intan",
+              desc: "Potret momen-momen yang kita abadikan dalam bingkai kenangan.",
+              cta: "Lihat Galeri",
+            },
+            dedication: {
+              line1: "Website ini aku buat untukmu, Intan.",
+              line2:
+                "Sebuah cara sederhana untuk mengenang lima belas pertemuan yang tak pernah biasa.",
+              line3:
+                "Dari Kopi Nako hingga subuh di Kota Wisata, setiap momen bersamamu selalu bermakna.",
+              line4:
+                "Terima kasih telah menjadi bagian yang begitu indah dalam hidupku.",
+            },
+          },
+          moments: {
+            title: "17 Pertemuan, 17 Cerita",
+            item1:
+              "Pertemuan 1: Kopi Nako, Kota Wisata — pertama kali kita bertemu dan berbuka puasa bersama. Senyumanmu hari itu tak terlupakan.",
+            item2:
+              "Pertemuan 2: Gacoan & Living World — kamu bawakan buku favoritku dan kita makan es krim sambil tertawa.",
+            item3:
+              "Pertemuan 3: Nonton 'Sinners' — aku tertidur di pundakmu. Rasanya seperti dunia berhenti sebentar.",
+            item4:
+              "Pertemuan 4: Joffi Ramen — hujan hampir membatalkan rencana, tapi kita tetap bertemu dan tertawa hangat.",
+            item5:
+              "Pertemuan 5: Bekasi — jas hujan kekecilan, lupa helm, tapi semua terasa indah karena kamu tetap ikut.",
+            item6:
+              "Pertemuan 6: Mixue Ciangsana — ngobrol panjang, cerita pribadi, hingga prank 'charisma & skin' yang bikin ketawa.",
+            item7:
+              "Pertemuan 7: Living World & Triple8 — hari pertama kerja, hasil UTBK, dan kamu tetap sempatkan bertemu meski sebentar.",
+            item8:
+              "Pertemuan 8: Nongkrong di Triple8 — main billiard bareng, ketawa bareng, dan lihat kamu bekerja dengan bangga.",
+            item9:
+              "Pertemuan 9: Triple8 lagi — lihat kamu meski sebentar, tapi tingkahku memalukan. Maaf ya...",
+            item10:
+              "Pertemuan 10: Kopi Nako & Living World — beli parfum, martabak, dan obrolan panjang soal rasa dan masa lalu.",
+            item11:
+              "Pertemuan 11: Malam takbiran — hujan, GUNTING dari tasmu, green tea kemanisan, dan jalan kaki karena portal. Seru!",
+            item12:
+              "Pertemuan 12: Pertama kali ke rumahmu — bertemu mamamu, makan martabak bareng, dan menontonmu bekerja sepenuh hati di Triple8.",
+            item13:
+              "Pertemuan 13: Keliling Bekasi bareng — Kayuringin, Summarecon, makan nasi goreng alun-alun, dan kamu berhasil bawa motor pulang sendiri.",
+            item14:
+              "Pertemuan 14: Niatnya me time, malah nemenin kamu kerja sampai subuh — billiard, sholat Subuh, lontong sayur pagi-pagi, dan obrolan di jalan.",
+            item15:
+              "Pertemuan 15: Kamu sakit tenggorokan dan perut, aku bawakan bubur & larutan. Elusan lembutmu di kepala itu... hangat dan penuh makna.",
+            item16:
+              "Pertemuan 16: Ketika me-time berubah jadi kebersamaan hangat—berangkat dari pagi, saling jaga di Triple8, dan cerita malam yang penuh makna.",
+            item17:
+              "Pertemuan 17: Pondok Gede, Jus Corner, rute panjang, nasi goreng SM, dan rasa bersalah karena malam terlalu larut. Tapi semua itu indah dalam kenangan.",
+          },
+          nav: {
+            home: "Beranda",
+            about: "Tentang",
+            story: "Cerita",
+            gallery: "Galeri",
+          },
+
+          social: {
+            title: "Temukan Intan di:",
+            instagram: "Instagram",
+            tiktok: "TikTok",
+            whatsapp: "WhatsApp",
+          },
+
+          footer: {
+            line1: "Dibuat dengan ❤️ untuk",
+            line2: "Bekasi ✦ Ciangsana ✦ Bogor",
+          },
+        },
+        en: {
+          hero: {
+            title: "Intan Nurhidayah",
+            subtitle:
+              "A story from seventeen moments that always remind me how grateful I am to have met you",
+            cta: "See Our Story",
+          },
+          preview: {
+            about: {
+              title: "About Intan",
+              desc: "A little introduction about who Intan is and her life journey...",
+              cta: "See More",
+            },
+            story: {
+              title: "Our Story",
+              desc: "Seventeen moments that shaped a single story of meetings, warmth, and unforgettable memories.",
+              cta: "Read Story",
+            },
+            gallery: {
+              title: "Intan's Gallery",
+              desc: "Snapshots of the moments we captured in frames of memory.",
+              cta: "View Gallery",
+            },
+
+            dedication: {
+              line1: "This website is made for you, Intan.",
+              line2:
+                "A simple way to remember seventeen moments that were anything but ordinary.",
+              line3:
+                "From Kopi Nako to sunrise at Kota Wisata, every moment with you meant something.",
+              line4: "Thank you for being such a beautiful part of my life.",
+            },
+          },
+          moments: {
+            title: "17 Moments, 17 Stories",
+            item1:
+              "Moment 1: Kopi Nako, Kota Wisata — our very first meeting, breaking fast together. Your smile that day stayed in my heart.",
+            item2:
+              "Moment 2: Gacoan & Living World — you brought me a book I loved, and we laughed over messy ice cream.",
+            item3:
+              "Moment 3: Watching 'Sinners' — I dozed off on your shoulder. It felt like the world paused just for us.",
+            item4:
+              "Moment 4: Joffi Ramen — rain nearly ruined the plan, but we still met and laughed through the night.",
+            item5:
+              "Moment 5: Bekasi trip — kids-sized raincoat, no helmet, but you still came with me. That meant a lot.",
+            item6:
+              "Moment 6: Mixue Ciangsana — long talks, deep stories, and that funny 'charisma & skin' prank from me.",
+            item7:
+              "Moment 7: Living World & Triple8 — your first day at work, my UTBK results, and still, you made time for us.",
+            item8:
+              "Moment 8: Hanging out at Triple8 — we played billiards, laughed, and I felt proud watching you work.",
+            item9:
+              "Moment 9: Triple8 again — I came just to see you, but ended up acting silly. I'm sorry about that.",
+            item10:
+              "Moment 10: Kopi Nako & Living World — perfume hunting, deep talks, and sweet martabak before heading home.",
+            item11:
+              "Moment 11: Takbiran night — rainy weather, SCISSORS from your bag, sweet green tea, and walking home through a blocked street.",
+            item12:
+              "Moment 12: First time visiting your home — I met your mom, we shared martabak, and I watched you work full-time at Triple8. Unforgettable.",
+            item13:
+              "Moment 13: Exploring Bekasi — spontaneous ride through Kayuringin, Summarecon, fried rice at the town square, and your first time riding all the way home.",
+            item14:
+              "Moment 14: Meant for me-time, turned into a full night with you — billiard, Subuh at Kota Wisata, lontong sayur in Bekasi, and a beautiful sunrise ride.",
+            item15:
+              "Moment 15: You were sick, but still thoughtful — I brought porridge and drinks, and you softly patted my head. That small gesture meant the world to me.",
+            item16:
+              "Moment 16: What started as me-time turned into warm togetherness—Triple8 morning, caring glances, and meaningful late-night stories.",
+            item17:
+              "Moment 17: Pondok Gede, Jus Corner, long rides, SM fried rice, and guilt from a late night. Yet, it remains a beautiful memory.",
+          },
+          nav: {
+            home: "Home",
+            about: "About",
+            story: "Story",
+            gallery: "Gallery",
+          },
+
+          social: {
+            title: "Find Intan on:",
+            instagram: "Instagram",
+            tiktok: "TikTok",
+            whatsapp: "WhatsApp",
+          },
+
+          footer: {
+            line1: "Created with ❤️ for",
+            line2: "Bekasi ✦ Ciangsana ✦ Bogor",
+          },
+        },
+      };
+
+      // Typing animation
+      let typingHeroQueue = [];
+      let typingIndex = 0;
+      let typingLetter = 0;
+
+      function typeHeroSection() {
+        if (typingIndex >= typingHeroQueue.length) return;
+        const { id, text } = typingHeroQueue[typingIndex];
+        const el = document.getElementById(id);
+        if (!el) return;
+
+        if (typingLetter <= text.length) {
+          el.textContent = text.substring(0, typingLetter);
+          typingLetter++;
+          setTimeout(typeHeroSection, 20);
+        } else {
+          typingIndex++;
+          typingLetter = 0;
+          setTimeout(typeHeroSection, 300);
+        }
+      }
+
+      function applyLanguage(lang) {
+        // Reset Hero Typing Targets
+        [
+          "typingTitle",
+          "typingSubtitle",
+          "typingCTA",
+          "typingLine1",
+          "typingLine2",
+          "typingLine3",
+          "typingLine4",
+        ].forEach((id) => {
+          const el = document.getElementById(id);
+          if (el) el.textContent = "";
+        });
+
+        // Set Typing Queue
+        typingHeroQueue = [
+          { id: "typingTitle", text: i18nText[lang].hero.title },
+          { id: "typingSubtitle", text: i18nText[lang].hero.subtitle },
+          { id: "typingCTA", text: i18nText[lang].hero.cta },
+          { id: "typingLine1", text: i18nText[lang].preview.dedication.line1 },
+          { id: "typingLine2", text: i18nText[lang].preview.dedication.line2 },
+          { id: "typingLine3", text: i18nText[lang].preview.dedication.line3 },
+          { id: "typingLine4", text: i18nText[lang].preview.dedication.line4 },
+        ];
+        typingIndex = 0;
+        typingLetter = 0;
+        typeHeroSection();
+
+        // Static i18n Texts
+        document.querySelectorAll("[data-i18n]").forEach((el) => {
+          const keys = el.dataset.i18n.split(".");
+          const idKey = el.getAttribute("id");
+          if (!idKey || !typingHeroQueue.find((t) => t.id === idKey)) {
+            let text = i18nText[lang];
+            keys.forEach((k) => (text = text?.[k]));
+            if (text) el.textContent = text;
+          }
+        });
+
+        document.documentElement.lang = lang;
+        localStorage.setItem("lang", lang);
+        document.getElementById("langText").textContent = lang.toUpperCase();
+        document.getElementById("langTextMobileNav").textContent =
+          lang.toUpperCase();
+      }
+
+      const savedLang = localStorage.getItem("lang") || "id";
+      window.addEventListener("DOMContentLoaded", () =>
+        applyLanguage(savedLang)
+      );
+
+      document.getElementById("langToggle").addEventListener("click", () => {
+        const newLang = document.documentElement.lang === "id" ? "en" : "id";
+        applyLanguage(newLang);
+      });
+
+      document
+        .getElementById("langToggleMobileNav")
+        .addEventListener("click", () => {
+          const newLang = document.documentElement.lang === "id" ? "en" : "id";
+          applyLanguage(newLang);
+        });
+
+      // Theme toggle
+      const themeIcon = document.getElementById("themeIcon");
+      function setTheme(mode) {
+        document.documentElement.classList.toggle("dark", mode === "dark");
+        themeIcon.classList.toggle("fa-sun", mode === "dark");
+        themeIcon.classList.toggle("fa-moon", mode !== "dark");
+        localStorage.setItem("theme", mode);
+      }
+
+      document.getElementById("themeToggle").addEventListener("click", () => {
+        const isDark = document.documentElement.classList.contains("dark");
+        setTheme(isDark ? "light" : "dark");
+      });
+
+      setTheme(localStorage.getItem("theme") || "light");
+
+      // Highlight active nav link
+      function setActiveNavLink() {
+        const path = window.location.pathname.replace(/\/$/, ""); // normalize trailing slash
+        const navLinks = document.querySelectorAll("nav a, nav button"); // desktop & mobile
+
+        navLinks.forEach((link) => {
+          const href = link.getAttribute("href");
+          if (href && path === href.replace(/\/$/, "")) {
+            link.classList.add("text-pink-500", "font-semibold");
+          } else {
+            link.classList.remove("text-pink-500", "font-semibold");
+          }
+        });
+      }
+
+      window.addEventListener("DOMContentLoaded", () => {
+        applyLanguage(savedLang);
+        setActiveNavLink();
+      });
+    </script>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const preloader = document.getElementById("preloader");
+        setTimeout(() => {
+          if (preloader) {
+            preloader.classList.add("opacity-0", "transition", "duration-700");
+            setTimeout(() => {
+              preloader.style.display = "none";
+            }, 700);
+          }
+        }, 5000); // <- tampil 3 detik (bisa ganti ke 5000 untuk 5 detik)
+      });
+    </script>
+
+    <!-- Floating Social Media Button -->
+    <div
+      id="socialToggle"
+      class="fixed z-50 w-12 h-12 bg-pink-500 rounded-full shadow-lg flex items-center justify-center text-white cursor-pointer hover:rotate-12 hover:scale-110 transition-all duration-300 ease-out bottom-24 md:bottom-6 right-6"
+      title="Sosial Media"
+    >
+      <i class="fas fa-share-alt text-xl"></i>
+    </div>
+
+    <!-- Social Media Popup -->
+    <div
+      id="socialPopup"
+      class="fixed z-50 bg-white dark:bg-gray-800 text-gray-800 dark:text-white rounded-xl shadow-2xl w-64 p-4 hidden flex-col gap-3 transform transition-all duration-500 ease-in-out translate-x-10 opacity-0 bottom-40 md:bottom-24 right-6"
+    >
+      <h3
+        class="text-lg font-bold mb-2 text-pink-600 dark:text-pink-300"
+        data-i18n="social.title"
+      >
+        Temukan Intan di:
+      </h3>
+
+      <a
+        href="https://instagram.com/thdya_"
+        target="_blank"
+        class="flex items-center gap-3 p-2 rounded-lg hover:bg-pink-50 dark:hover:bg-pink-900 transition-all group"
+      >
+        <i
+          class="fab fa-instagram text-pink-500 text-lg group-hover:scale-110 transition-transform"
+        ></i>
+        <span
+          class="group-hover:text-pink-600 transition-colors"
+          data-i18n="social.instagram"
+          >Instagram</span
+        >
+      </a>
+
+      <a
+        href="https://www.tiktok.com/@beliarddra"
+        target="_blank"
+        class="flex items-center gap-3 p-2 rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900 transition-all group"
+      >
+        <i
+          class="fab fa-tiktok text-purple-500 text-lg group-hover:scale-110 transition-transform"
+        ></i>
+        <span
+          class="group-hover:text-purple-600 transition-colors"
+          data-i18n="social.tiktok"
+          >TikTok</span
+        >
+      </a>
+
+      <!-- <a
+        href="#"
+        target="_blank"
+        class="flex items-center gap-3 p-2 rounded-lg hover:bg-green-50 dark:hover:bg-green-900 transition-all group"
+      >
+        <i
+          class="fab fa-whatsapp text-green-500 text-lg group-hover:scale-110 transition-transform"
+        ></i>
+        <span
+          class="group-hover:text-green-600 transition-colors"
+          data-i18n="social.whatsapp"
+          >WhatsApp</span
+        >
+      </a> -->
+    </div>
+
+    <script>
+      const toggleBtn = document.getElementById("socialToggle");
+      const popup = document.getElementById("socialPopup");
+
+      toggleBtn.addEventListener("click", () => {
+        const isHidden = popup.classList.contains("hidden");
+        if (isHidden) {
+          popup.classList.remove("hidden");
+          setTimeout(() => {
+            popup.classList.remove("translate-x-10", "opacity-0");
+          }, 10);
+        } else {
+          popup.classList.add("translate-x-10", "opacity-0");
+          setTimeout(() => {
+            popup.classList.add("hidden");
+          }, 300);
+        }
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!toggleBtn.contains(e.target) && !popup.contains(e.target)) {
+          if (!popup.classList.contains("hidden")) {
+            popup.classList.add("translate-x-10", "opacity-0");
+            setTimeout(() => {
+              popup.classList.add("hidden");
+            }, 300);
+          }
+        }
+      });
+    </script>
+
+    <div
+      id="popupModal"
+      class="hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50"
+    >
+      <div
+        class="bg-white dark:bg-gray-900 text-gray-800 dark:text-white rounded-xl shadow-2xl w-[90%] max-w-3xl max-h-[90vh] overflow-y-auto p-8 relative"
+      >
+        <h2
+          class="text-2xl font-bold mb-4 text-pink-600 dark:text-pink-400 text-center"
+        >
+          Untukmu, yang mungkin sedang lelah diam-diam...
+        </h2>
+        <div
+          class="text-justify whitespace-pre-line leading-relaxed space-y-2 text-sm sm:text-base"
+        >
+          <p>
+            Intan… jika kamu membaca ini sekarang, aku harap kamu sedang duduk
+            tenang, dan mau membuka hatimu sebentar saja. Karena kali ini, aku
+            ingin bicara bukan sebagai seseorang yang mengagumimu dari luar,
+            tapi sebagai seseorang yang sungguh-sungguh ingin memahami apa yang
+            kamu rasakan — bahkan yang tidak pernah kamu ucapkan.
+          </p>
+
+          <p>
+            Aku tahu kamu sudah banyak melalui hal berat dalam hidup ini. Bahkan
+            beberapa hal, kamu simpan sendiri, tanpa pernah benar-benar ada
+            tempat untuk menumpahkannya. Kamu terlihat kuat, tapi aku tahu… itu
+            bukan berarti kamu tidak pernah lelah. Kadang aku merasa, kamu
+            terlalu sering jadi tempat bagi semua orang, tapi tidak pernah
+            merasa punya tempat sendiri untuk beristirahat.
+          </p>
+
+          <p>
+            Ada hari-hari di mana kamu mungkin merasa tidak cukup. Merasa tidak
+            dilihat. Merasa usahamu sia-sia. Aku tidak tahu seberapa sering kamu
+            harus berpura-pura baik-baik saja demi tidak merepotkan orang lain.
+            Tapi di balik semua itu, aku ingin kamu tahu: kamu sudah cukup.
+            Bahkan saat kamu merasa paling hancur sekalipun… kamu tetap cukup.
+          </p>
+
+          <p>
+            Dunia ini tidak selalu adil untuk orang sebaik kamu. Tapi kamu tetap
+            berdiri, tetap tersenyum, tetap berusaha memahami orang lain —
+            bahkan yang menyakitimu. Dan aku ingin kamu tahu… itu bukan
+            kelemahan. Itu kekuatan. Tidak semua orang bisa bertahan sebaik
+            kamu. Tidak semua orang bisa tetap lembut, bahkan setelah banyak
+            dikecewakan.
+          </p>
+
+          <p>
+            Aku menulis ini karena aku tidak ingin kamu merasa sendiri lagi. Aku
+            ingin kamu punya satu ruang, meskipun kecil, yang sepenuhnya
+            milikmu. Tempat kamu bisa menangis tanpa takut dihakimi. Tempat kamu
+            bisa jujur, tanpa harus tampil kuat. Dan kalau kamu mau, aku akan
+            jadi tempat itu. Aku tidak akan memaksa masuk, tapi aku akan selalu
+            ada... kalau kamu butuh peluk, atau diam.
+          </p>
+
+          <p>
+            Intan, kamu tidak harus sempurna untuk dicintai. Kamu tidak harus
+            selalu kuat untuk dianggap hebat. Aku jatuh hati bukan pada sisi
+            sempurnamu, tapi pada sisi rapuhmu yang tetap memilih berjalan. Pada
+            cara kamu menyembunyikan luka, tapi tetap bisa mencintai dunia. Pada
+            caramu tetap hadir untuk orang lain, bahkan saat kamu sendiri sedang
+            kosong.
+          </p>
+
+          <p>
+            Aku tahu masa lalumu tidak mudah. Mungkin masih ada yang membekas.
+            Tapi aku percaya, kamu bukan dirimu karena luka itu — kamu dirimu
+            karena kamu tetap memilih bertumbuh, meski banyak yang menyuruhmu
+            menyerah. Dan buatku… itu adalah keindahan paling nyata dari seorang
+            manusia.
+          </p>
+
+          <p>
+            Jika suatu hari kamu merasa gagal, ingatlah bahwa kamu adalah
+            jawaban dari doa orang-orang yang mencintaimu. Dan jika suatu malam
+            kamu ingin menyerah, ingatlah bahwa dunia masih butuh kebaikanmu.
+            Aku butuh kamu. Bukan untuk jadi penyelamat, tapi cukup untuk jadi
+            dirimu sendiri — yang hangat, yang jujur, dan apa adanya.
+          </p>
+
+          <p>
+            Terima kasih karena sudah bertahan sejauh ini. Terima kasih karena
+            tidak menyerah. Terima kasih karena tetap memilih hidup, meski
+            kadang semuanya terasa berat. Aku tidak tahu apakah kamu akan selalu
+            mengingat tulisan ini, tapi aku harap… saat kamu sedang sendirian,
+            kamu akan merasa sedikit lebih tenang. Karena seseorang di luar
+            sana… benar-benar peduli padamu.
+          </p>
+
+          <p>
+            Dan jika semua ini terasa terlalu banyak untuk dipahami sekarang,
+            tidak apa-apa. Baca pelan-pelan. Rasakan satu-satu. Tapi ingat satu
+            hal: kamu berhak bahagia. Bukan karena kamu sempurna… tapi karena
+            kamu manusia. Dan manusia seperti kamu… layak dicintai, seutuhnya,
+            selamanya.
+          </p>
+        </div>
+
+        <button
+          id="closePopup"
+          class="mt-6 w-full bg-pink-600 hover:bg-pink-700 text-white py-2 px-4 rounded-lg transition duration-300"
+        >
+          Aku mengerti... terima kasih telah membaca ❤️
+        </button>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const popup = document.getElementById("popupModal");
+        const closeBtn = document.getElementById("closePopup");
+
+        // Periksa apakah popup sudah pernah ditampilkan
+        const hasSeen = localStorage.getItem("hasSeenPopup");
+
+        if (!hasSeen) {
+          popup.classList.remove("hidden");
+        }
+
+        closeBtn.addEventListener("click", () => {
+          popup.classList.add("hidden");
+          localStorage.setItem("hasSeenPopup", "true");
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,2457 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cerita - Intan Nurhidayah</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Montserrat", "sans-serif"],
+              cursive: ["Dancing Script", "cursive"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      body {
+        font-family: "Montserrat", sans-serif;
+      }
+      .glow-text {
+        color: #fff;
+        text-shadow: 0 0 6px rgba(255, 182, 193, 0.6),
+          0 0 12px rgba(255, 182, 193, 0.5), 0 0 20px rgba(236, 72, 153, 0.4);
+      }
+      .glow-subtle {
+        text-shadow: 0 0 4px rgba(255, 192, 203, 0.3);
+      }
+    </style>
+  </head>
+  <body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-white">
+    <!-- Background Video -->
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      class="fixed top-0 left-0 w-full h-full object-cover -z-20"
+    >
+      <source src="../assets/media/bg.mp4" type="video/mp4" />
+    </video>
+    <div
+      class="fixed top-0 left-0 w-full h-full bg-black/60 dark:bg-black/70 backdrop-blur-sm -z-10"
+    ></div>
+
+    <div class="relative z-10">
+      <!-- Header -->
+      <header
+        class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur shadow"
+      >
+        <div
+          class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between"
+        >
+          <div
+            class="flex items-center gap-2 text-pink-500 font-bold text-lg glow-text"
+          >
+            <i class="fas fa-heart"></i>
+            <span>Intan Nurhidayah</span>
+          </div>
+          <nav
+            class="hidden md:flex gap-6 text-sm font-medium text-gray-800 dark:text-white"
+          >
+            <a href="/" class="hover:text-pink-400 glow-subtle"
+              ><i class="fas fa-home"></i>
+              <span data-i18n="nav.home">Beranda</span></a
+            >
+            <a href="/about/" class="hover:text-pink-400 glow-subtle"
+              ><i class="fas fa-user"></i>
+              <span data-i18n="nav.about">Tentang</span></a
+            >
+            <a href="/story/" class="hover:text-pink-400 glow-subtle"
+              ><i class="fas fa-book-open"></i>
+              <span data-i18n="nav.story">Cerita</span></a
+            >
+            <a href="/gallery/" class="hover:text-pink-400 glow-subtle"
+              ><i class="fas fa-images"></i>
+              <span data-i18n="nav.gallery">Galeri</span></a
+            >
+          </nav>
+          <div class="flex items-center gap-2">
+            <button
+              id="langToggle"
+              class="px-2 py-1 bg-white/80 dark:bg-gray-700 text-pink-500 dark:text-white rounded-full border shadow text-xs md:text-sm"
+            >
+              <i class="fas fa-globe"></i> <span id="langText">ID</span>
+            </button>
+            <button id="themeToggle" class="text-lg md:text-xl">
+              <i
+                id="themeIcon"
+                class="fas fa-moon text-purple-600 dark:text-white"
+              ></i>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Hero Section -->
+      <section class="pt-32 pb-24 text-center px-6">
+        <h1
+          class="text-4xl font-bold text-pink-200 mb-4 glow-text"
+          data-i18n="hero.title"
+        >
+          Tujuh Belas Titik Temu, Satu Garis Cerita Kita.
+        </h1>
+        <p
+          class="max-w-xl mx-auto text-lg text-gray-300 glow-subtle"
+          data-i18n="hero.subtitle"
+        >
+          Perjalanan kecil, penuh makna. Sebelas momen yang menyatu dalam
+          kenangan bersama Intan Nurhidayah.
+        </p>
+      </section>
+
+      <!-- Dynamic Buttons for Story Navigation -->
+      <section class="text-center mt-8 px-6">
+        <div class="flex flex-wrap justify-center gap-4 mt-6">
+          <button
+            onclick="scrollToMeet(1)"
+            class="px-4 py-2 bg-pink-500 text-white rounded-full text-sm hover:bg-pink-600 transition"
+            data-i18n="btn.meet1"
+          >
+            Pertemuan 1
+          </button>
+          <button
+            onclick="scrollToMeet(2)"
+            class="px-4 py-2 bg-pink-500 text-white rounded-full text-sm hover:bg-pink-600 transition"
+            data-i18n="btn.meet2"
+          >
+            Pertemuan 2
+          </button>
+          <button
+            onclick="scrollToMeet(3)"
+            class="px-4 py-2 bg-pink-500 text-white rounded-full text-sm hover:bg-pink-600 transition"
+            data-i18n="btn.meet3"
+          >
+            Pertemuan 3
+          </button>
+          <button
+            onclick="scrollToMeet(4)"
+            class="px-4 py-2 bg-pink-500 text-white rounded-full text-sm hover:bg-pink-600 transition"
+            data-i18n="btn.meet4"
+          >
+            Pertemuan 4
+          </button>
+          <button
+            onclick="scrollToMeet(5)"
+            class="px-4 py-2 bg-pink-500 text-white rounded-full text-sm hover:bg-pink-600 transition"
+            data-i18n="btn.meet5"
+          >
+            Pertemuan 5
+          </button>
+          <button
+            onclick="scrollToMeet(6)"
+            class="px-4 py-2 bg-pink-500 text-white rounded-full text-sm hover:bg-pink-600 transition"
+            data-i18n="btn.meet6"
+          >
+            Pertemuan 6
+          </button>
+          <button
+            onclick="scrollToMeet(7)"
+            class="px-4 py-2 bg-pink-500 text-white rounded-full text-sm hover:bg-pink-600 transition"
+            data-i18n="btn.meet7"
+          >
+            Pertemuan 7
+          </button>
+          <button
+            onclick="scrollToMeet(8)"
+            class="px-4 py-2 bg-pink-500 text-white rounded-full text-sm hover:bg-pink-600 transition"
+            data-i18n="btn.meet8"
+          >
+            Pertemuan 8
+          </button>
+          <button
+            onclick="scrollToMeet(9)"
+            class="px-4 py-2 bg-pink-500 text-white rounded-full text-sm hover:bg-pink-600 transition"
+            data-i18n="btn.meet9"
+          >
+            Pertemuan 9
+          </button>
+          <button
+            onclick="scrollToMeet(10)"
+            class="px-4 py-2 bg-pink-500 text-white rounded-full text-sm hover:bg-pink-600 transition"
+            data-i18n="btn.meet10"
+          >
+            Pertemuan 10
+          </button>
+          <button
+            onclick="scrollToMeet(11)"
+            class="px-4 py-2 bg-pink-500 text-white rounded-full text-sm hover:bg-pink-600 transition"
+            data-i18n="btn.meet11"
+          >
+            Pertemuan 11
+          </button>
+          <button
+            onclick="scrollToMeet(12)"
+            class="px-4 py-2 bg-pink-500 text-white rounded-full text-sm hover:bg-pink-600 transition"
+            data-i18n="btn.meet12"
+          >
+            Pertemuan 12
+          </button>
+          <button
+            onclick="scrollToMeet(13)"
+            class="px-4 py-2 bg-pink-500 text-white rounded-full text-sm hover:bg-pink-600 transition"
+            data-i18n="btn.meet13"
+          >
+            Pertemuan 13
+          </button>
+          <button
+            onclick="scrollToMeet(14)"
+            class="px-4 py-2 bg-pink-500 text-white rounded-full text-sm hover:bg-pink-600 transition"
+            data-i18n="btn.meet14"
+          >
+            Pertemuan 14
+          </button>
+          <button
+            onclick="scrollToMeet(15)"
+            class="px-4 py-2 bg-pink-500 text-white rounded-full text-sm hover:bg-pink-600 transition"
+            data-i18n="btn.meet15"
+          >
+            Pertemuan 15
+          </button>
+          <button
+            onclick="scrollToMeet(16)"
+            class="px-4 py-2 bg-pink-500 text-white rounded-full text-sm hover:bg-pink-600 transition"
+            data-i18n="btn.meet16"
+          >
+            Pertemuan 16
+          </button>
+          <button
+            onclick="scrollToMeet(17)"
+            class="px-4 py-2 bg-pink-500 text-white rounded-full text-sm hover:bg-pink-600 transition"
+            data-i18n="btn.meet17"
+          >
+            Pertemuan 17
+          </button>
+        </div>
+      </section>
+
+      <!--  Moments -->
+      <main class="space-y-32">
+        <!-- Meet 1 -->
+        <section
+          id="meet1"
+          class="relative min-h-screen flex items-center justify-center bg-cover bg-center text-white"
+          style="background-image: url('/assets/img/meet1.png')"
+        >
+          <div class="absolute inset-0 bg-black/50"></div>
+          <div class="relative z-10 max-w-2xl text-center px-6">
+            <h2
+              class="text-3xl sm:text-4xl font-bold mb-2 glow-text"
+              data-i18n="meet1.title"
+            >
+              Pertemuan 1
+            </h2>
+            <p
+              class="text-pink-200 mb-4 glow-subtle"
+              data-i18n="meet1.location"
+            >
+              📍 Kopi Nako, Kota Wisata <br />Buka Puasa
+            </p>
+            <div
+              class="mt-6 max-w-xl mx-auto text-base text-white/90 italic glow-subtle space-y-3"
+            >
+              <p data-i18n="meet1.msg1">
+                Intan, aku masih ingat jelas pertemuan pertama kita di Kopi
+                Nako, Kota Wisata.
+              </p>
+              <p data-i18n="meet1.msg2">
+                Hari itu begitu spesial, karena untuk pertama kalinya aku bisa
+                bertemu langsung denganmu.
+              </p>
+              <p data-i18n="meet1.msg3">
+                Dari obrolan pertama itu, aku tahu kamu adalah sosok yang luar
+                biasa.
+              </p>
+              <p data-i18n="meet1.msg4">
+                Terima kasih sudah datang hari itu dan membawakan perasaan
+                hangat yang tak terlupakan.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Meet 2 -->
+        <section
+          id="meet2"
+          class="relative min-h-screen flex items-center justify-center bg-cover bg-center text-white"
+          style="background-image: url('/assets/img/meet2.png')"
+        >
+          <div class="absolute inset-0 bg-black/50"></div>
+          <div class="relative z-10 max-w-2xl text-center px-6">
+            <h2
+              class="text-3xl sm:text-4xl font-bold mb-2 glow-text"
+              data-i18n="meet2.title"
+            >
+              Pertemuan 2
+            </h2>
+            <p
+              class="text-pink-200 mb-4 glow-subtle"
+              data-i18n="meet2.location"
+            >
+              📍 Gacoan & Living World
+            </p>
+            <div
+              class="mt-6 max-w-xl mx-auto text-base text-white/90 italic glow-subtle space-y-3"
+            >
+              <p data-i18n="meet2.msg1">
+                Waktu itu aku baru pulang dari mudik dan langsung ingin bertemu
+                kamu.
+              </p>
+              <p data-i18n="meet2.msg2">
+                Kita ketemu di Mie Gacoan, dan kamu bahkan membawakan buku yang
+                aku inginkan.
+              </p>
+              <p data-i18n="meet2.msg3">
+                Lalu kita ke Living World, beli es krim, dan aku ketawa karena
+                kamu belepotan makannya — lucu banget.
+              </p>
+              <p data-i18n="meet2.msg4">
+                Momen sederhana itu... buatku sangat membekas. Terima kasih
+                sudah menemani hari itu.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Meet 3 -->
+        <section
+          id="meet3"
+          class="relative min-h-screen flex items-center justify-center bg-cover bg-center text-white"
+          style="background-image: url('/assets/img/meet3.png')"
+        >
+          <div class="absolute inset-0 bg-black/50"></div>
+          <div class="relative z-10 max-w-2xl text-center px-6">
+            <h2
+              class="text-3xl sm:text-4xl font-bold mb-2 glow-text"
+              data-i18n="meet3.title"
+            >
+              Pertemuan 3
+            </h2>
+            <p
+              class="text-pink-200 mb-4 glow-subtle"
+              data-i18n="meet3.location"
+            >
+              📍 Living World & Gacoan
+            </p>
+            <div
+              class="mt-6 max-w-xl mx-auto text-base text-white/90 italic glow-subtle space-y-3"
+            >
+              <p data-i18n="meet3.msg1">
+                Aku menjemput kamu di depan SD, karena belum berani langsung ke
+                rumah.
+              </p>
+              <p data-i18n="meet3.msg2">
+                Kita duduk bareng, makan jajanan, lalu nonton film “Sinners”.
+              </p>
+              <p data-i18n="meet3.msg3">
+                Aku sempat tertidur di pundakmu... dan itu jadi momen tak
+                terlupakan buatku.
+              </p>
+              <p data-i18n="meet3.msg4">
+                Terima kasih sudah membuatku merasa sangat nyaman dan hangat di
+                pertemuan itu.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Meet 4 -->
+        <section
+          id="meet4"
+          class="relative min-h-screen flex items-center justify-center bg-cover bg-center text-white"
+          style="background-image: url('/assets/img/meet4.png')"
+        >
+          <div class="absolute inset-0 bg-black/50"></div>
+          <div class="relative z-10 max-w-2xl text-center px-6">
+            <h2
+              class="text-3xl sm:text-4xl font-bold mb-2 glow-text"
+              data-i18n="meet4.title"
+            >
+              Pertemuan 4
+            </h2>
+            <p
+              class="text-pink-200 mb-4 glow-subtle"
+              data-i18n="meet4.location"
+            >
+              📍 Joffi Ramen, Gunung Putri
+            </p>
+            <div
+              class="mt-6 max-w-xl mx-auto text-base text-white/90 italic glow-subtle space-y-3"
+            >
+              <p data-i18n="meet4.msg1">
+                Awalnya hampir batal karena hujan, tapi akhirnya kita tetap
+                bertemu malam itu.
+              </p>
+              <p data-i18n="meet4.msg2">
+                Obrolan kita di jalan, tawa kita di meja ramen... semuanya
+                sederhana tapi sangat bermakna.
+              </p>
+              <p data-i18n="meet4.msg3">
+                Kamu pun tetap temani aku beli buah. Hal kecil yang aku sangat
+                apresiasi.
+              </p>
+              <p data-i18n="meet4.msg4">
+                Terima kasih sudah mau hadir, meski malam itu sempat penuh ragu.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Meet 5 -->
+        <section
+          id="meet5"
+          class="relative min-h-screen flex items-center justify-center bg-cover bg-center text-white"
+          style="background-image: url('/assets/img/meet5.png')"
+        >
+          <div class="absolute inset-0 bg-black/50"></div>
+          <div class="relative z-10 max-w-2xl text-center px-6">
+            <h2
+              class="text-3xl sm:text-4xl font-bold mb-2 glow-text"
+              data-i18n="meet5.title"
+            >
+              Pertemuan 5
+            </h2>
+            <p
+              class="text-pink-200 mb-4 glow-subtle"
+              data-i18n="meet5.location"
+            >
+              📍 Jatiasih & Grand Galaxy Park, Bekasi
+            </p>
+            <div
+              class="mt-6 max-w-xl mx-auto text-base text-white/90 italic glow-subtle space-y-3"
+            >
+              <p data-i18n="meet5.msg1">
+                Sebelum menjemputmu, aku sempat beli jas hujan — sayangnya
+                ukuran anak-anak wkwk.
+              </p>
+              <p data-i18n="meet5.msg2">
+                Aku lupa bawain helm untukmu, dan kamu tetap ikut meski gerimis.
+              </p>
+              <p data-i18n="meet5.msg3">
+                Kita makan bakso, beli mie ayam buat mamamu, dan aku berikan
+                helmku untukmu agar tidak kehujanan.
+              </p>
+              <p data-i18n="meet5.msg4">
+                Terima kasih, Tan. Untuk momen yang jauh, hangat, dan sangat aku
+                syukuri.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Meet 6 -->
+        <section
+          id="meet6"
+          class="relative min-h-screen flex items-center justify-center bg-cover bg-center text-white"
+          style="background-image: url('/assets/img/meet6.png')"
+        >
+          <div class="absolute inset-0 bg-black/50"></div>
+          <div class="relative z-10 max-w-2xl text-center px-6">
+            <h2
+              class="text-3xl sm:text-4xl font-bold mb-2 glow-text"
+              data-i18n="meet6.title"
+            >
+              Pertemuan 6
+            </h2>
+            <p
+              class="text-pink-200 mb-4 glow-subtle"
+              data-i18n="meet6.location"
+            >
+              📍 Mixue, Ruko Orange Ciangsana
+            </p>
+            <div
+              class="mt-6 max-w-xl mx-auto text-base text-white/90 italic glow-subtle space-y-3"
+            >
+              <p data-i18n="meet6.msg1">
+                Waktu itu aku ngajak kamu meet dadakan, dan kamu mau walau
+                seadanya — buatku itu nggak masalah.
+              </p>
+              <p data-i18n="meet6.msg2">
+                Aku jemput kamu seperti biasa, lalu kita berangkat ke Mixue Ruko
+                Orange Ciangsana.
+              </p>
+              <p data-i18n="meet6.msg3">
+                Kita pesan dulu, terus naik ke atas, nyalain AC, lalu duduk dan
+                ngobrol lama.
+              </p>
+              <p data-i18n="meet6.msg4">
+                Ceritamu luar biasa banget malam itu... dan aku juga sempat
+                ngerjain kamu kirim skin & charisma, wkwk seru!
+              </p>
+              <p data-i18n="meet6.msg5">
+                Pas Mixue mau tutup, aku sempat mau bilang sesuatu... tapi belum
+                waktunya. Nggak apa-apa.
+              </p>
+              <p data-i18n="meet6.msg6">
+                Sebelum pulang, kita beli Mixue buat keluargamu, lalu aku antar
+                kamu sampai rumah. Sungguh luar biasa!
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Meet 7 -->
+        <section
+          id="meet7"
+          data-meet="7"
+          data-modal="meet7Modal"
+          class="relative min-h-screen flex items-center justify-center bg-cover bg-center text-white"
+          style="background-image: url('/assets/img/meet7.png')"
+        >
+          <div class="absolute inset-0 bg-black/50"></div>
+          <div class="relative z-10 max-w-2xl text-center px-6">
+            <h2
+              class="text-3xl sm:text-4xl font-bold mb-2 glow-text"
+              data-i18n="meet7.title"
+            >
+              Pertemuan 7
+            </h2>
+            <p
+              class="text-pink-200 mb-4 glow-subtle"
+              data-i18n="meet7.location"
+            >
+              📍 Living World & Triple8 Billiard
+            </p>
+            <div
+              class="mt-6 max-w-xl mx-auto text-base text-white/90 italic glow-subtle space-y-3"
+            >
+              <p data-i18n="meet7.msg1">
+                Waktu itu aku baru pulang kerja, dan kamu sedang menunggu hasil
+                pengumuman UTBK-SNBT 2025.
+              </p>
+              <p data-i18n="meet7.msg2">
+                Itu juga jadi hari pertamamu kerja di Triple8 Billiard. Kamu
+                sedang jogging di Kota Wisata waktu aku bilang akan ke sana.
+              </p>
+              <p data-i18n="meet7.msg3">
+                Aku sampai di sana setelah maghrib dan sempat cari kamu, tapi
+                nggak ketemu. Akhirnya aku telepon dan kita bertemu di sebelah
+                kiri Living World.
+              </p>
+              <p data-i18n="meet7.msg4">
+                Kamu buru-buru karena harus kerja, tapi tetap sempatin ketemu
+                dan lihat hasil UTBK-ku. Ternyata aku belum lolos, dan meski
+                sedih... aku ikhlas.
+              </p>
+              <p data-i18n="meet7.msg5">
+                Kamu semangatin aku, dan itu bikin aku lega. Aku antar kamu
+                pulang, lalu pulang sendiri sambil mikir untuk main ke tempat
+                kerja barumu.
+              </p>
+              <p data-i18n="meet7.msg6">
+                Akhirnya aku ngajak temanku main billiard ke Triple8. Kamu kaget
+                pas aku datang. Kita main 2 jam, dan temanku bilang kamu salting
+                liat aku.
+              </p>
+              <p data-i18n="meet7.msg7">
+                Aku juga salting jujur... tapi senang banget lihat kamu kerja
+                pertama kali. Aku pulang jam 00.40 dengan perasaan bangga dan
+                hangat.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Meet 8 -->
+        <section
+          id="meet8"
+          data-meet="8"
+          data-modal="meet8Modal"
+          class="relative min-h-screen flex items-center justify-center bg-cover bg-center text-white"
+          style="background-image: url('/assets/img/meet8.png')"
+        >
+          <div class="absolute inset-0 bg-black/50"></div>
+          <div class="relative z-10 max-w-2xl text-center px-6">
+            <h2
+              class="text-3xl sm:text-4xl font-bold mb-2 glow-text"
+              data-i18n="meet8.title"
+            >
+              Pertemuan 8
+            </h2>
+            <p
+              class="text-pink-200 mb-4 glow-subtle"
+              data-i18n="meet8.location"
+            >
+              📍 Triple8 Billiard, Kota Wisata
+            </p>
+            <div
+              class="mt-6 max-w-xl mx-auto text-base text-white/90 italic glow-subtle space-y-3"
+            >
+              <p data-i18n="meet8.msg1">
+                Aku datang ke Triple8 Billiard lagi, tempat kamu bekerja, kali
+                ini untuk nongkrong santai.
+              </p>
+              <p data-i18n="meet8.msg2">
+                Aku sampai sekitar pukul 10 malam, dan pesan makan & minum ke
+                Kak Lidia.
+              </p>
+              <p data-i18n="meet8.msg3">
+                Kak Lidia bilang, “kamu mau pesan atau cari Intan?” — jujur aku
+                kaget dan salting waktu dengarnya 😳
+              </p>
+              <p data-i18n="meet8.msg4">
+                Aku main laptop sampai tengah malam, lalu pesan meja VIP 3 jam
+                dan akhirnya kita ketemu langsung.
+              </p>
+              <p data-i18n="meet8.msg5">
+                Kita main billiard bareng — dan itu seru banget! Aku juga senang
+                bisa ngobrol dan ketawa sama kamu lagi.
+              </p>
+              <p data-i18n="meet8.msg6">
+                Aku ingat banget pulang sekitar jam setengah 3 lebih. Tapi aku
+                pulang dengan perasaan senang karena kamu bekerja dengan baik
+                hari itu.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Meet 9 -->
+        <section
+          id="meet9"
+          data-meet="9"
+          data-modal="meet9Modal"
+          class="relative min-h-screen flex items-center justify-center bg-cover bg-center text-white"
+          style="background-image: url('/assets/img/meet9.png')"
+        >
+          <div class="absolute inset-0 bg-black/50"></div>
+          <div class="relative z-10 max-w-2xl text-center px-6">
+            <h2
+              class="text-3xl sm:text-4xl font-bold mb-2 glow-text"
+              data-i18n="meet9.title"
+            >
+              Pertemuan 9
+            </h2>
+            <p
+              class="text-pink-200 mb-4 glow-subtle"
+              data-i18n="meet9.location"
+            >
+              📍 Triple8 Billiard (Lagi)
+            </p>
+            <div
+              class="mt-6 max-w-xl mx-auto text-base text-white/90 italic glow-subtle space-y-3"
+            >
+              <p data-i18n="meet9.msg1">
+                Aku bermain billiard lagi dengan temanku, dan meskipun hanya
+                sebentar, aku bisa melihatmu.
+              </p>
+              <p data-i18n="meet9.msg2">
+                Jujur, aku dibuat salting sama temanku sendiri karena tingkahnya
+                yang aneh waktu itu wkwk.
+              </p>
+              <p data-i18n="meet9.msg3">
+                Saat white ball jatuh dan kamu ingin mengambilnya, aku justru
+                bertingkah tidak seharusnya.
+              </p>
+              <p data-i18n="meet9.msg4">
+                Maaf ya untuk itu. Aku seharusnya lebih menjaga sikap.
+              </p>
+              <p data-i18n="meet9.msg5">
+                Meskipun kamu terlihat agak kurang mood hari itu, aku tetap
+                bersyukur bisa melihat kamu sehat dan hadir di sana.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Meet 10 -->
+        <section
+          id="meet10"
+          data-meet="10"
+          data-modal="meet10Modal"
+          class="relative min-h-screen flex items-center justify-center bg-cover bg-center text-white"
+          style="background-image: url('/assets/img/meet10.png')"
+        >
+          <div class="absolute inset-0 bg-black/50"></div>
+          <div class="relative z-10 max-w-2xl text-center px-6">
+            <h2
+              class="text-3xl sm:text-4xl font-bold mb-2 glow-text"
+              data-i18n="meet10.title"
+            >
+              Pertemuan 10
+            </h2>
+            <p
+              class="text-pink-200 mb-4 glow-subtle"
+              data-i18n="meet10.location"
+            >
+              📍 Kopi Nako & Living World, Kota Wisata
+            </p>
+            <div
+              class="mt-6 max-w-xl mx-auto text-base text-white/90 italic glow-subtle space-y-3"
+            >
+              <p data-i18n="meet10.msg1">
+                Pertemuan ke-10 terjadi saat kamu libur kerja, dan aku mengajak
+                kamu bertemu — kamu mau!
+              </p>
+              <p data-i18n="meet10.msg2">
+                Aku berangkat sore menjelang maghrib, lalu salat maghrib sebelum
+                akhirnya kamu membalas chat-ku.
+              </p>
+              <p data-i18n="meet10.msg3">
+                Kita bertemu setelah sempat saling telepon, dan aku menjemputmu
+                untuk ke Kopi Nako, Kota Wisata.
+              </p>
+              <p data-i18n="meet10.msg4">
+                Di sana kita ngobrol, aku kerja proyek, dan momen lucu soal
+                pesanan bakso kuanci yang sempat tertunda wkwk.
+              </p>
+              <p data-i18n="meet10.msg5">
+                Setelah itu, kita ke Living World karena kamu ingin beli parfum,
+                dan ada insiden tutup botol jatuh yang bikin panik 😅
+              </p>
+              <p data-i18n="meet10.msg6">
+                Aku bantu ambil tutupnya, dan akhirnya kamu bisa beli parfum itu
+                dengan lega.
+              </p>
+              <p data-i18n="meet10.msg7">
+                Lalu kita ke Indomaret Fresh, beli minuman, duduk bareng dan
+                ngobrol panjang soal masa lalu, cerita hidup, bahkan perasaan.
+              </p>
+              <p data-i18n="meet10.msg8">
+                Kita bahas kalimat “I love you whatever you are” yang bikin kamu
+                sempat ngambek kecil — maaf ya waktu itu wkwk.
+              </p>
+              <p data-i18n="meet10.msg9">
+                Sebelum pulang, kita beli martabak, kamu ngajak foto bareng...
+                momen itu sangat luar biasa dan penuh makna untukku.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Meet 11 -->
+        <section
+          id="meet11"
+          data-meet="11"
+          data-modal="meet11Modal"
+          class="relative min-h-screen flex items-center justify-center bg-cover bg-center text-white"
+          style="background-image: url('/assets/img/meet11.png')"
+        >
+          <div class="absolute inset-0 bg-black/50"></div>
+          <div class="relative z-10 max-w-2xl text-center px-6">
+            <h2
+              class="text-3xl sm:text-4xl font-bold mb-2 glow-text"
+              data-i18n="meet11.title"
+            >
+              Pertemuan 11
+            </h2>
+            <p
+              class="text-pink-200 mb-4 glow-subtle"
+              data-i18n="meet11.location"
+            >
+              📍 Malam Takbiran Idul Adha
+            </p>
+            <div
+              class="mt-6 max-w-xl mx-auto text-base text-white/90 italic glow-subtle space-y-3"
+            >
+              <p data-i18n="meet11.msg1">
+                Malam itu adalah malam takbiran, tapi kita malah ketemuan — kamu
+                minta dijemput wkwk.
+              </p>
+              <p data-i18n="meet11.msg2">
+                Aku otw dari rumah ke Triple8 untuk menjemput kamu pulang kerja.
+                Sempat malu pas naik ke atas, tapi akhirnya aku berani juga.
+              </p>
+              <p data-i18n="meet11.msg3">
+                Pas keluar parkiran, satpam bilang "pacarnya ya?" — jujur malu
+                banget wkwk!
+              </p>
+              <p data-i18n="meet11.msg4">
+                Awalnya kita mau ke wahana dekat rumah kamu, tapi setelah
+                sampai, tempatnya terlalu sepi jadi batal.
+              </p>
+              <p data-i18n="meet11.msg5">
+                Kita rencana makan steak, tapi tutup. Akhirnya ke Mie Gacoan
+                Jatiasih dan kamu minta tolong bawa tas wkwk.
+              </p>
+              <p data-i18n="meet11.msg6">
+                Pesanannya cepat datang, dan kamu pinjam HP buat hotspot pesanin
+                lagi buat aku — sweet banget 😌
+              </p>
+              <p data-i18n="meet11.msg7">
+                Pas buka saus, kamu keluarkan GUNTING dari tas — asli nggak
+                ekspektasi, ngakak banget!
+              </p>
+              <p data-i18n="meet11.msg8">
+                Kamu cerita dapat 50k dari koko owner karena lembur, tapi
+                diminta mamamu buat jajan — dan aku bantu juga kasih pegangan.
+              </p>
+              <p data-i18n="meet11.msg9">
+                Kita lanjut pesan minuman, tapi kamu bilang green tea-nya
+                kemanisan wkwk, akhirnya dibungkusin pakai tutup plastik
+                pressan!
+              </p>
+              <p data-i18n="meet11.msg10">
+                Di perjalanan pulang kita ngobrol banyak soal hubungan kita.
+                Sampai dekat rumahmu, jalannya di-portal jadi kamu jalan kaki
+                deh 😅
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="meet12"
+          class="relative min-h-screen flex items-center justify-center bg-cover bg-center text-white"
+          style="background-image: url('/assets/img/meet12.png')"
+        >
+          <div class="absolute inset-0 bg-black/50"></div>
+          <div class="relative z-10 max-w-2xl text-center px-6">
+            <h2
+              class="text-3xl sm:text-4xl font-bold mb-2 glow-text"
+              data-i18n="meet12.title"
+            >
+              Pertemuan 12
+            </h2>
+            <p
+              class="text-pink-200 mb-4 glow-subtle"
+              data-i18n="meet12.location"
+            >
+              📍 Triple8 Billiard & Rumahmu
+            </p>
+            <div
+              class="mt-6 max-w-xl mx-auto text-base text-white/90 italic glow-subtle space-y-3"
+            >
+              <p data-i18n="meet12.msg1">
+                Hari itu adalah momen pertama aku menjemput kamu di rumah, dan
+                pertama kalinya juga aku bersilaturahmi dengan mama kamu.
+              </p>
+              <p data-i18n="meet12.msg2">
+                Jujur, aku nggak nyangka keluarga besarmu juga sedang ada di
+                sana, dan mereka lagi bakar-bakar sate — suasananya hangat
+                banget.
+              </p>
+              <p data-i18n="meet12.msg3">
+                Aku bawa martabak, dan kamu serta keluargamu memberiku buah dan
+                martabak juga. Kita menikmatinya bersama-sama di ruang tengah.
+              </p>
+              <p data-i18n="meet12.msg4">
+                Aku ngobrol dengan mama kamu, dan melihat kamu di ruang tengah
+                secara langsung buat pertama kalinya... itu bikin deg-degan luar
+                biasa.
+              </p>
+              <p data-i18n="meet12.msg5">
+                Setelah itu kita pergi ke Kota Wisata, sempat mampir dulu ke
+                Lawson untuk jajan. Aku senang banget bisa melihat kamu bahagia
+                di sana.
+              </p>
+              <p data-i18n="meet12.msg6">
+                Tujuan akhirnya adalah Triple8 Billiard. Awalnya aku hanya niat
+                mengerjakan tugas, tapi akhirnya aku memilih untuk melihat kamu
+                kerja dari awal sampai akhir.
+              </p>
+              <p data-i18n="meet12.msg7">
+                Kamu bekerja sangat luar biasa: penuh semangat, tidak gengsi,
+                dan benar-benar total. Aku kagum dengan kerja keras dan
+                keteguhan kamu.
+              </p>
+              <p data-i18n="meet12.msg8">
+                Saat tempatnya tutup, aku bantu kamu nutupin meja billiard —
+                momen kecil yang aku simpan dalam hati.
+              </p>
+              <p data-i18n="meet12.msg9">
+                Lalu kita turun, dan momen bersejarah terjadi: kamu belajar
+                motor pertama kali sama aku. Aku bangga bisa mengajari kamu
+                secara langsung.
+              </p>
+              <p data-i18n="meet12.msg10">
+                Kamu berhasil mengendarai motorku sampai rumah... dan itu jadi
+                pencapaian indah yang nggak akan pernah aku lupakan.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="meet13"
+          class="relative min-h-screen flex items-center justify-center bg-cover bg-center text-white"
+          style="background-image: url('/assets/img/meet13.png')"
+        >
+          <div class="absolute inset-0 bg-black/50"></div>
+          <div class="relative z-10 max-w-2xl text-center px-6">
+            <h2
+              class="text-3xl sm:text-4xl font-bold mb-2 glow-text"
+              data-i18n="meet13.title"
+            >
+              Pertemuan 13
+            </h2>
+            <p
+              class="text-pink-200 mb-4 glow-subtle"
+              data-i18n="meet13.location"
+            >
+              📍 Bekasi — Kayuringin, Summarecon, & Alun-Alun
+            </p>
+            <div
+              class="mt-6 max-w-xl mx-auto text-base text-white/90 italic glow-subtle space-y-3"
+            >
+              <p data-i18n="meet13.msg1">
+                Pertemuan ke-13 ini jadi salah satu yang tak akan pernah aku
+                lupakan. Seperti biasa, aku menjemputmu di rumah — dan ternyata,
+                aku kembali bertemu dengan mamamu. Kita berpamitan dengan sopan,
+                dan itu membuatku merasa semakin dekat, bukan hanya denganmu…
+                tapi juga dengan keluargamu.
+              </p>
+              <p data-i18n="meet13.msg2">
+                Ada momen lucu waktu aku sempat menyarankan kamu bawa motorku —
+                tapi mamamu langsung khawatir dan panik wkwk. Wajar banget, kamu
+                masih dalam tahap belajar, dan aku bisa mengerti rasa sayangnya
+                beliau padamu.
+              </p>
+              <p data-i18n="meet13.msg3">
+                Setelah itu, kita melaju tanpa arah pasti, cuma ingin
+                jalan-jalan. Tapi justru karena tanpa ekspektasi, momen itu jadi
+                istimewa. Kita mengarah ke Bekasi, dan tanpa sadar menyusuri
+                jalanan yang belum pernah kita lewati bersama sebelumnya.
+              </p>
+              <p data-i18n="meet13.msg4">
+                Kita berhenti di daerah Kayuringin — tempat tinggal kak Jeden.
+                Kita mampir ke Alfamart, beli minuman dan cemilan, lalu lanjut
+                beli cimol. Rasanya sederhana, tapi momen-momen itu selalu
+                berhasil membuat aku bahagia.
+              </p>
+              <p data-i18n="meet13.msg5">
+                Perjalanan kita berlanjut ke Summarecon Bekasi. Aku gak nyangka
+                bisa ajak kamu ke sana, karena sebelumnya itu hanya angan. Tapi
+                hari itu, kamu di sampingku, menikmati kota, dan itu cukup
+                buatku merasa bersyukur.
+              </p>
+              <p data-i18n="meet13.msg6">
+                Malam menjelang, dan kita mulai lapar. Kita cari nasi goreng dan
+                akhirnya nemu di dekat alun-alun Bekasi. Kita turun, pesan
+                makanan, duduk bersama di trotoar yang tenang. Kamu beli
+                kerupuk, dan mengingatkanku untuk habisin makananku — hal kecil
+                yang penuh makna.
+              </p>
+              <p data-i18n="meet13.msg7">
+                Setelah makan, aku sempat menunjuk tempat yang biasa aku datangi
+                untuk me time. Sekarang kamu tahu — kamu tahu sedikit tentang
+                jalur sunyiku. Itu bikin aku merasa kamu benar-benar bagian dari
+                hidupku.
+              </p>
+              <p data-i18n="meet13.msg8">
+                Di perjalanan pulang ke Ciangsana, kita ngobrol sepanjang jalan.
+                Topik-topik kecil yang tumbuh jadi dalam. Dan di akhir malam,
+                kamu sampai rumah dengan selamat, membawa tas pemberianku, dan
+                membawa pulang sebagian kenangan luar biasa hari itu.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="meet14"
+          class="relative min-h-screen flex items-center justify-center bg-cover bg-center text-white"
+          style="background-image: url('/assets/img/meet14.png')"
+        >
+          <div class="absolute inset-0 bg-black/50"></div>
+          <div class="relative z-10 max-w-2xl text-center px-6">
+            <h2
+              class="text-3xl sm:text-4xl font-bold mb-2 glow-text"
+              data-i18n="meet14.title"
+            >
+              Pertemuan 14
+            </h2>
+            <p
+              class="text-pink-200 mb-4 glow-subtle"
+              data-i18n="meet14.location"
+            >
+              📍 Triple8 Billiard, Subuh di Kota Wisata, & Lontong Sayur Pagi
+            </p>
+            <div
+              class="mt-6 max-w-xl mx-auto text-base text-white/90 italic glow-subtle space-y-3"
+            >
+              <p data-i18n="meet14.msg1">
+                Awalnya aku cuma ingin me time. Aku bingung mau ke mana, sampai
+                akhirnya kuputuskan ke Triple8 Billiard lagi. Di parkiran, aku
+                bertemu Bang Jamal dan kami seperti biasa bercanda sebentar.
+              </p>
+              <p data-i18n="meet14.msg2">
+                Aku masuk, pesan minum, dan duduk santai. Awalnya kupikir yang
+                di kasir itu Kak Lidya, tapi ternyata bukan. Aku belum tahu
+                siapa orang baru itu.
+              </p>
+              <p data-i18n="meet14.msg3">
+                Aku mulai main billiard di regular table — dua jam. Aku belajar
+                dan terus mencoba, dibimbing Kak Jeden, dan kamu juga melihatku
+                belajar meskipun belum jago.
+              </p>
+              <p data-i18n="meet14.msg4">
+                Kita main bareng juga — game push-up. Kalau gak masukin bola,
+                harus push-up. Aku cuma berhasil masukin 3 bola... sisanya
+                push-up! Kamu? Gagal semua, 10x push-up! Wkwk, seru banget momen
+                itu.
+              </p>
+              <p data-i18n="meet14.msg5">
+                Waktu habis, aku tambah 1 jam lagi. Aku sempat break sebentar
+                untuk makan dan buka laptop. Setelah itu lanjut main lagi sampai
+                hampir subuh.
+              </p>
+              <p data-i18n="meet14.msg6">
+                Aku temani kamu kerja sampai selesai — untuk kedua kalinya. Jam
+                setengah 4 pagi aku selesai main. Kita beres-beres bareng,
+                nutupin meja billiard juga.
+              </p>
+              <p data-i18n="meet14.msg7">
+                Turun ke parkiran, Bang Jamal nelpon karena motorku belum
+                dikunci setang, wkwkw. Tapi ternyata udah. Lalu kamu mulai bawa
+                motor lagi, dan ini jadi momen belajar motor keduamu denganku.
+              </p>
+              <p data-i18n="meet14.msg8">
+                Kita sholat subuh di Masjid Darussalam, Kota Wisata. Setelah
+                itu, kita muter kota dan kamu kepikiran makan lontong sayur
+                tetanggaku. Kita putuskan ke Bekasi demi itu.
+              </p>
+              <p data-i18n="meet14.msg9">
+                Di jalan, kamu ingat Tiara sakit, dan kita rencanakan beli bubur
+                juga. Tapi karena kamu udah ngidam, kita cari lontong dulu. Isi
+                bensin dulu di Shell, pompa ban, lanjut perjalanan.
+              </p>
+              <p data-i18n="meet14.msg10">
+                Sampai juga di tempat lontong sayur. Awalnya kamu canggung, tapi
+                lalu kamu menikmati banget rasanya. Kita makan bareng... momen
+                pagi yang gak biasa, tapi terasa sangat hangat.
+              </p>
+              <p data-i18n="meet14.msg11">
+                Setelah itu, kita balik ke Bogor. Aku sempat salah jalan wkwk,
+                malah ke arah Kemang Pratama, terus muter lewat Rawalumbu,
+                Cipendawa, dan Jatiasih — jalan kenangan kita.
+              </p>
+              <p data-i18n="meet14.msg12">
+                Kita mampir beli bubur buat Tiara — bubur favoritnya yang biasa
+                dibelikan mamamu. Lalu aku antar kamu pulang dengan rasa puas
+                dan bahagia luar biasa.
+              </p>
+              <p data-i18n="meet14.msg13">
+                Tak pernah kuduga momen dari malam hingga jam 8 pagi seperti ini
+                bisa terjadi lagi. Tapi ternyata, kita mengulang kisah luar
+                biasa bersama — untuk kedua kalinya.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="meet15"
+          class="relative min-h-screen flex items-center justify-center bg-cover bg-center text-white"
+          style="background-image: url('/assets/img/meet15.png')"
+        >
+          <div class="absolute inset-0 bg-black/50"></div>
+          <div class="relative z-10 max-w-2xl text-center px-6">
+            <h2
+              class="text-3xl sm:text-4xl font-bold mb-2 glow-text"
+              data-i18n="meet15.title"
+            >
+              Pertemuan 15
+            </h2>
+            <p
+              class="text-pink-200 mb-4 glow-subtle"
+              data-i18n="meet15.location"
+            >
+              📍 Triple8 Billiard – Bubur, Larutan, dan Rasa Peduli
+            </p>
+            <div
+              class="mt-6 max-w-xl mx-auto text-base text-white/90 italic glow-subtle space-y-3"
+            >
+              <p data-i18n="meet15.msg1">
+                Di pertemuan ini, kamu sedang tidak enak badan — tenggorokan dan
+                perutmu kurang baik. Aku saat itu sedang bersama temanku.
+              </p>
+              <p data-i18n="meet15.msg2">
+                Aku menawarkan untuk membelikan obat, tapi kamu menolaknya
+                dengan halus. Aku tahu kamu hanya merasa tidak enak hati.
+              </p>
+              <p data-i18n="meet15.msg3">
+                Tapi kamu tetap berinisiatif — kamu minta dibelikan bubur dan
+                larutan cap kaki tiga. Satu botol biasa dan satu kaleng rasa.
+              </p>
+              <p data-i18n="meet15.msg4">
+                Aku membelikannya dan bersama temanku aku mengantarkannya ke
+                Triple8 Billiard. Di sana aku juga ingin bermain billiard
+                bersama temanku.
+              </p>
+              <p data-i18n="meet15.msg5">
+                Aku memintamu menghampiriku. Dan tanpa kuduga... kamu mengelus
+                kepalaku lembut. Aku kaget, terdiam.
+              </p>
+              <p data-i18n="meet15.msg6">
+                Aku sadar — itu bukan sekadar elusan biasa. Itu cara kamu
+                berterima kasih, dan cara kamu menunjukkan rasa sayang.
+              </p>
+              <p data-i18n="meet15.msg7">
+                Terima kasih untuk rasa hangat itu. Aku main billiard satu jam,
+                dan setelahnya hanya duduk menikmati iced tea sebentar lalu
+                pulang.
+              </p>
+              <p data-i18n="meet15.msg8">
+                Di perjalanan pulang, aku gak berhenti berdoa — supaya kamu
+                cepat pulih, selalu sehat, dan selalu dalam lindungan Tuhan.
+              </p>
+              <p data-i18n="meet15.msg9">
+                Meskipun momen itu sederhana, tapi aku menyimpannya dalam-dalam.
+                Karena aku tahu, itu bentuk sayang yang nyata dari kamu.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Meet 16 -->
+        <section
+          id="meet16"
+          class="relative min-h-screen flex items-center justify-center bg-cover bg-center text-white"
+          style="background-image: url('/assets/img/meet16.png')"
+        >
+          <div class="absolute inset-0 bg-black/50"></div>
+          <div class="relative z-10 max-w-2xl text-center px-6">
+            <h2
+              class="text-3xl sm:text-4xl font-bold mb-2 glow-text"
+              data-i18n="meet16.title"
+            >
+              Pertemuan 16
+            </h2>
+            <p
+              class="text-pink-200 mb-4 glow-subtle"
+              data-i18n="meet16.location"
+            >
+              📍 Kulineran Bakso, Ciangsana - Gunung Putri, Kabupaten Bogor
+            </p>
+            <div
+              class="mt-6 max-w-xl mx-auto text-base text-white/90 italic glow-subtle space-y-3"
+            >
+              <p data-i18n="meet16.msg1">
+                Aku mendadak ingin kulineran bakso di Ciangsana, Gunung Putri,
+                Kabupaten Bogor — dan kamu kuajak dadakan! Wkwkwk.
+              </p>
+              <p data-i18n="meet16.msg2">
+                Untungnya kamu mau, karena kamu juga pengen makan. Jadi aku
+                jemput ke rumahmu seperti biasa.
+              </p>
+              <p data-i18n="meet16.msg3">
+                Sesampainya di rumahmu, jaringanku tiba-tiba hilang seperti
+                kuota habis — padahal ternyata hanya sinyalnya menyebalkan.
+              </p>
+              <p data-i18n="meet16.msg4">
+                Yang luar biasa, kali ini ayahmu menyambutku dan mempersilakan
+                masuk — untuk kedua kalinya aku masuk ke rumahmu.
+              </p>
+              <p data-i18n="meet16.msg5">
+                Aku ngobrol banyak dengan ayahmu — mulai dari pekerjaan beliau
+                di bidang energi listrik, hingga keahliannya dalam memperbaiki
+                instalasi listrik. Aku sangat takjub!
+              </p>
+              <p data-i18n="meet16.msg6">
+                Setelah kamu siap, kita berpamitan bersama pada ayahmu, dan
+                berangkat menuju rumah Lala di Bumi Mutiara karena kamu ingin
+                beli baju.
+              </p>
+              <p data-i18n="meet16.msg7">
+                Kamu kekurangan Rp15.000 dan aku menambahkannya — dan sepanjang
+                jalan kita ngobrol seru, mulai dari cerita ayahmu hingga
+                topik-topik lainnya.
+              </p>
+              <p data-i18n="meet16.msg8">
+                Sesampainya di rumah Lala, kamu turun sendiri dan aku menunggumu
+                di luar.
+              </p>
+              <p data-i18n="meet16.msg9">
+                Setelah membeli baju, kita langsung meluncur ke tempat kulineran
+                bakso di luar Komplek Kota Wisata — aku sempat linglung karena
+                belum tahu tempatnya wkwkwk.
+              </p>
+              <p data-i18n="meet16.msg10">
+                Kita memesan bakso — kamu pilih bakso urat dan bakso telur, aku
+                juga. Minumnya air putih aja biar netral, katanya hehehe.
+              </p>
+              <p data-i18n="meet16.msg11">
+                Momen itu luar biasa... sederhana tapi hangat. Dan sempat ada
+                momen kocak waktu kamu disuruh cepat-cepat sama Mbak Dita lewat
+                WA! 🤭
+              </p>
+              <p data-i18n="meet16.msg12">
+                Setelah makan, kita langsung berangkat ke Triple8 untuk
+                mengantar kamu kerja. Di jalan, kita ngobrol lagi.
+              </p>
+              <p data-i18n="meet16.msg13">
+                Kamu pamit saat sampai, dan sebelum pulang aku sempat menyapa
+                Kak Jeden lagi di luar wkwkw. Lalu aku pulang dengan hati yang
+                penuh.
+              </p>
+            </div>
+          </div>
+        </section>
+        <!-- Meet 17 -->
+        <section
+          id="meet17"
+          class="relative min-h-screen flex items-center justify-center bg-cover bg-center text-white pb-28 sm:pb-0"
+          style="background-image: url('/assets/img/meet17.png')"
+        >
+          <div class="absolute inset-0 bg-black/50"></div>
+          <div class="relative z-10 max-w-2xl text-center px-6">
+            <h2
+              class="text-3xl sm:text-4xl font-bold mb-2 glow-text"
+              data-i18n="meet17.title"
+            >
+              Pertemuan 17
+            </h2>
+            <p
+              class="text-pink-200 mb-4 glow-subtle"
+              data-i18n="meet17.location"
+            >
+              📍 Pondok Gede, Jatimakmur, Jatiasih & Jus Corner
+            </p>
+            <div
+              class="mt-6 max-w-xl mx-auto text-base text-white/90 italic glow-subtle space-y-3"
+            >
+              <p data-i18n="meet17.msg1">
+                Hari itu kamu libur, dan aku sangat senang sekali karena kita
+                bisa bertemu lagi.
+              </p>
+              <p data-i18n="meet17.msg2">
+                Aku agak telat menjemputmu karena harus antar mamaku beli buah
+                dulu. Tapi sepanjang jalan kita teleponan — dan itu bikin aku
+                bahagia.
+              </p>
+              <p data-i18n="meet17.msg3">
+                Saat sampai di rumahmu, aku takjub... kamu tampil sangat cantik.
+                Aku bahagia luar biasa.
+              </p>
+              <p data-i18n="meet17.msg4">
+                Kita berangkat menuju Pondok Gede supaya kamu bisa lihat dunia
+                luar selain Bogor, wkwk.
+              </p>
+              <p data-i18n="meet17.msg5">
+                Dalam perjalanan kita banyak ngobrol, berbagi cerita, dan
+                rasanya luar biasa banget.
+              </p>
+              <p data-i18n="meet17.msg6">
+                Saat sampai di Jatimakmur ternyata macet parah — nyebelin, tapi
+                tetap kita lanjut.
+              </p>
+              <p data-i18n="meet17.msg7">
+                Sampai di Pondok Gede kamu lihat sekeliling, dan mulai mengenal
+                area dekat Jakarta Timur.
+              </p>
+              <p data-i18n="meet17.msg8">
+                Setelah itu kita balik ke arah Jatiasih, lalu mampir ke Jus
+                Corner di daerah Komsen.
+              </p>
+              <p data-i18n="meet17.msg9">
+                Kamu pesan jus alpukat, aku pesan jus pisang. Kalau tidak salah
+                kita juga makan pempek & kentang goreng.
+              </p>
+              <p data-i18n="meet17.msg10">
+                Di sana aku menunjukkan progres hadiah spesial untukmu — dan
+                kamu melihat langsung makna di baliknya.
+              </p>
+              <p data-i18n="meet17.msg11">
+                Itu tanda sayangku untukmu. Maaf kalau belum sempurna, tapi aku
+                yakin kamu bisa rasakan niat dan ketulusannya.
+              </p>
+              <p data-i18n="meet17.msg12">
+                Kita ngobrol hangat, berfoto-foto, dan jujur... itu momen yang
+                sangat aku maknai dan tak akan kulupakan.
+              </p>
+              <p data-i18n="meet17.msg13">
+                Sebelum pulang, aku mengajakmu ke arah rumahku agar kamu tahu
+                jalan dan lebih mengenal wilayah luar.
+              </p>
+              <p data-i18n="meet17.msg14">
+                Kita sempat berhenti karena lelah, malam makin larut. Kamu
+                akhirnya tahu arah rumahku.
+              </p>
+              <p data-i18n="meet17.msg15">
+                Setelah itu, aku mengantarmu pulang — sebelumnya kita mampir
+                dulu beli nasi goreng SM yang pernah kamu pesan di ShopeeFood.
+              </p>
+              <p data-i18n="meet17.msg16">
+                Kita beli dua porsi untuk kamu dan mamamu. Tapi karena sudah
+                larut, aku hanya bisa mengantar sampai portal.
+              </p>
+              <p data-i18n="meet17.msg17">
+                Maaf ya... aku ingin antar sampai rumah, tapi situasinya sudah
+                terlalu malam.
+              </p>
+              <p data-i18n="meet17.msg18">
+                Paginya kamu dimarahi mamamu, dan aku merasa sangat bersalah.
+                Seharusnya kita tidak pulang terlalu malam.
+              </p>
+              <p data-i18n="meet17.msg19">
+                Tapi meski begitu... momen itu sangat luar biasa dan akan terus
+                aku ingat selamanya.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Bottom Navigation -->
+      <nav
+        class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-gray-800/90 backdrop-blur border-t border-gray-300 dark:border-gray-600 shadow z-50 md:hidden text-gray-800 dark:text-white"
+      >
+        <ul class="flex justify-around text-sm glow-subtle">
+          <li>
+            <a href="/" class="flex flex-col items-center py-2"
+              ><i class="fas fa-home"></i
+              ><span data-i18n="nav.home">Beranda</span></a
+            >
+          </li>
+          <li>
+            <a href="/about/" class="flex flex-col items-center py-2"
+              ><i class="fas fa-user"></i
+              ><span data-i18n="nav.about">Tentang</span></a
+            >
+          </li>
+          <li>
+            <a href="/story/" class="flex flex-col items-center py-2"
+              ><i class="fas fa-book-open"></i
+              ><span data-i18n="nav.story">Cerita</span></a
+            >
+          </li>
+          <li>
+            <a href="/gallery/" class="flex flex-col items-center py-2"
+              ><i class="fas fa-images"></i
+              ><span data-i18n="nav.gallery">Galeri</span></a
+            >
+          </li>
+          <li>
+            <button
+              id="langToggleMobileNav"
+              class="flex flex-col items-center py-2"
+            >
+              <i class="fas fa-globe"></i><span id="langTextMobileNav">ID</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Footer -->
+    <footer
+      class="hidden md:block bg-white/80 dark:bg-gray-900/80 backdrop-blur border-t border-gray-300 dark:border-gray-700 text-center text-sm text-gray-800 dark:text-gray-300 py-6 mt-16"
+    >
+      <p>
+        &copy; <span id="year"></span>
+        <span data-i18n="footer.line1">Dibuat dengan ❤️ untuk</span>
+        <strong>Intan Nurhidayah</strong>
+      </p>
+      <p class="mt-1" data-i18n="footer.line2">Bekasi ✦ Ciangsana ✦ Bogor</p>
+    </footer>
+
+    <!-- Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // === THEME TOGGLER ===
+        const themeToggle = document.getElementById("themeToggle");
+        const themeIcon = document.getElementById("themeIcon");
+        const htmlEl = document.documentElement;
+
+        function setTheme(theme) {
+          if (theme === "dark") {
+            htmlEl.classList.add("dark");
+            themeIcon.classList.replace("fa-moon", "fa-sun");
+          } else {
+            htmlEl.classList.remove("dark");
+            themeIcon.classList.replace("fa-sun", "fa-moon");
+          }
+          localStorage.setItem("theme", theme);
+        }
+
+        // Apply saved or system theme
+        const savedTheme = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        setTheme(savedTheme || (prefersDark ? "dark" : "light"));
+
+        themeToggle.addEventListener("click", () => {
+          const isDark = htmlEl.classList.toggle("dark");
+          setTheme(isDark ? "dark" : "light");
+        });
+
+        // === LANGUAGE TOGGLER ===
+        const langToggle = document.getElementById("langToggle");
+        const langText = document.getElementById("langText");
+        const langToggleMobile = document.getElementById("langToggleMobileNav");
+        const langTextMobile = document.getElementById("langTextMobileNav");
+
+        const translations = {
+          id: {
+            "title.page": "Cerita - Intan Nurhidayah",
+
+            "nav.home": "Beranda",
+            "nav.about": "Tentang",
+            "nav.story": "Cerita",
+            "nav.gallery": "Galeri",
+            "footer.line1": "Dibuat dengan ❤️ untuk",
+            "footer.line2": "Bekasi ✦ Ciangsana ✦ Bogor",
+
+            "hero.title": "Tujuh Belas Titik Temu, Satu Garis Cerita Kita.",
+            "hero.subtitle":
+              "Perjalanan kecil, penuh makna. Tujuh Belas momen yang menyatu dalam kenangan bersama Intan Nurhidayah.",
+            "btn.meet1": "Pertemuan 1",
+            "btn.meet2": "Pertemuan 2",
+            "btn.meet3": "Pertemuan 3",
+            "btn.meet4": "Pertemuan 4",
+            "btn.meet5": "Pertemuan 5",
+            "btn.meet6": "Pertemuan 6",
+            "btn.meet7": "Pertemuan 7",
+            "btn.meet8": "Pertemuan 8",
+            "btn.meet9": "Pertemuan 9",
+            "btn.meet10": "Pertemuan 10",
+            "btn.meet11": "Pertemuan 11",
+            "btn.meet12": "Pertemuan 12",
+            "btn.meet13": "Pertemuan 13",
+            "btn.meet14": "Pertemuan 14",
+            "btn.meet15": "Pertemuan 15",
+            "btn.meet16": "Pertemuan 16",
+            "btn.meet17": "Pertemuan 17",
+
+            "meet1.title": "Pertemuan 1",
+            "meet1.location": "📍 Kopi Nako, Kota Wisata <br>Buka Puasa",
+            "meet1.msg1":
+              "Intan, aku masih ingat jelas pertemuan pertama kita di Kopi Nako, Kota Wisata.",
+            "meet1.msg2":
+              "Hari itu begitu spesial, karena untuk pertama kalinya aku bisa bertemu langsung denganmu.",
+            "meet1.msg3":
+              "Dari obrolan pertama itu, aku tahu kamu adalah sosok yang luar biasa.",
+            "meet1.msg4":
+              "Terima kasih sudah datang hari itu dan membawakan perasaan hangat yang tak terlupakan.",
+
+            "meet2.title": "Pertemuan 2",
+            "meet2.location": "📍 Gacoan & Living World",
+            "meet2.msg1":
+              "Waktu itu aku baru pulang dari mudik dan langsung ingin bertemu kamu.",
+            "meet2.msg2":
+              "Kita ketemu di Mie Gacoan, dan kamu bahkan membawakan buku yang aku inginkan.",
+            "meet2.msg3":
+              "Lalu kita ke Living World, beli es krim, dan aku ketawa karena kamu belepotan makannya — lucu banget.",
+            "meet2.msg4":
+              "Momen sederhana itu... buatku sangat membekas. Terima kasih sudah menemani hari itu.",
+
+            "meet3.title": "Pertemuan 3",
+            "meet3.location": "📍 Living World & Gacoan",
+            "meet3.msg1":
+              "Aku menjemput kamu di depan SD, karena belum berani langsung ke rumah.",
+            "meet3.msg2":
+              "Kita duduk bareng, makan jajanan, lalu nonton film “Sinners”.",
+            "meet3.msg3":
+              "Aku sempat tertidur di pundakmu... dan itu jadi momen tak terlupakan buatku.",
+            "meet3.msg4":
+              "Terima kasih sudah membuatku merasa sangat nyaman dan hangat di pertemuan itu.",
+
+            "meet4.title": "Pertemuan 4",
+            "meet4.location": "📍 Joffi Ramen, Gunung Putri",
+            "meet4.msg1":
+              "Awalnya hampir batal karena hujan, tapi akhirnya kita tetap bertemu malam itu.",
+            "meet4.msg2":
+              "Obrolan kita di jalan, tawa kita di meja ramen... semuanya sederhana tapi sangat bermakna.",
+            "meet4.msg3":
+              "Kamu pun tetap temani aku beli buah. Hal kecil yang aku sangat apresiasi.",
+            "meet4.msg4":
+              "Terima kasih sudah mau hadir, meski malam itu sempat penuh ragu.",
+
+            "meet5.title": "Pertemuan 5",
+            "meet5.location": "📍 Jatiasih & Grand Galaxy Park, Bekasi",
+            "meet5.msg1":
+              "Sebelum menjemputmu, aku sempat beli jas hujan — sayangnya ukuran anak-anak wkwk.",
+            "meet5.msg2":
+              "Aku lupa bawain helm untukmu, dan kamu tetap ikut meski gerimis.",
+            "meet5.msg3":
+              "Kita makan bakso, beli mie ayam buat mamamu, dan aku berikan helmku untukmu agar tidak kehujanan.",
+            "meet5.msg4":
+              "Terima kasih, Tan. Untuk momen yang jauh, hangat, dan sangat aku syukuri.",
+
+            "meet6.title": "Pertemuan 6",
+            "meet6.location": "📍 Mixue, Ruko Orange Ciangsana",
+            "meet6.msg1":
+              "Waktu itu aku ngajak kamu meet dadakan, dan kamu mau walau seadanya — buatku itu nggak masalah.",
+            "meet6.msg2":
+              "Aku jemput kamu seperti biasa, lalu kita berangkat ke Mixue Ruko Orange Ciangsana.",
+            "meet6.msg3":
+              "Kita pesan dulu, terus naik ke atas, nyalain AC, lalu duduk dan ngobrol lama.",
+            "meet6.msg4":
+              "Ceritamu luar biasa banget malam itu... dan aku juga sempat ngerjain kamu kirim skin & charisma, wkwk seru!",
+            "meet6.msg5":
+              "Pas Mixue mau tutup, aku sempat mau bilang sesuatu... tapi belum waktunya. Nggak apa-apa.",
+            "meet6.msg6":
+              "Sebelum pulang, kita beli Mixue buat keluargamu, lalu aku antar kamu sampai rumah. Sungguh luar biasa!",
+
+            "meet7.title": "Pertemuan 7",
+            "meet7.location": "📍 Kota Wisata & Triple8 Billiard",
+            "meet7.msg1":
+              "Waktu itu aku baru pulang kerja, dan kamu sedang menunggu hasil pengumuman UTBK-SNBT 2025.",
+            "meet7.msg2":
+              "Itu juga jadi hari pertamamu kerja di Triple8 Billiard. Kamu sedang jogging di Kota Wisata waktu aku bilang akan ke sana.",
+            "meet7.msg3":
+              "Aku sampai di sana setelah maghrib dan sempat cari kamu, tapi nggak ketemu. Akhirnya aku telepon dan kita bertemu di sebelah kiri Living World.",
+            "meet7.msg4":
+              "Kamu buru-buru karena harus kerja, tapi tetap sempatin ketemu dan lihat hasil UTBK-ku. Ternyata aku belum lolos, dan meski sedih... aku ikhlas.",
+            "meet7.msg5":
+              "Kamu semangatin aku, dan itu bikin aku lega. Aku antar kamu pulang, lalu pulang sendiri sambil mikir untuk main ke tempat kerja barumu.",
+            "meet7.msg6":
+              "Akhirnya aku ngajak temanku main billiard ke Triple8. Kamu kaget pas aku datang. Kita main 2 jam, dan temanku bilang kamu salting liat aku.",
+            "meet7.msg7":
+              "Aku juga salting jujur... tapi senang banget lihat kamu kerja pertama kali. Aku pulang jam 00.40 dengan perasaan bangga dan hangat.",
+
+            "meet8.title": "Pertemuan 8",
+            "meet8.location": "📍 Triple8 Billiard, Kota Wisata",
+            "meet8.msg1":
+              "Aku datang ke Triple8 Billiard lagi, tempat kamu bekerja, kali ini untuk nongkrong santai.",
+            "meet8.msg2":
+              "Aku sampai sekitar pukul 10 malam, dan pesan makan & minum ke Kak Lidia.",
+            "meet8.msg3":
+              "Kak Lidia bilang, “kamu mau pesan atau cari Intan?” — jujur aku kaget dan salting waktu dengarnya 😳",
+            "meet8.msg4":
+              "Aku main laptop sampai tengah malam, lalu pesan meja VIP 3 jam dan akhirnya kita ketemu langsung.",
+            "meet8.msg5":
+              "Kita main billiard bareng — dan itu seru banget! Aku juga senang bisa ngobrol dan ketawa sama kamu lagi.",
+            "meet8.msg6":
+              "Aku ingat banget pulang sekitar jam setengah 3 lebih. Tapi aku pulang dengan perasaan senang karena kamu bekerja dengan baik hari itu.",
+
+            "meet9.title": "Pertemuan 9",
+            "meet9.location": "📍 Triple8 Billiard (Lagi)",
+            "meet9.msg1":
+              "Aku bermain billiard lagi dengan temanku, dan meskipun hanya sebentar, aku bisa melihatmu.",
+            "meet9.msg2":
+              "Jujur, aku dibuat salting sama temanku sendiri karena tingkahnya yang aneh waktu itu wkwk.",
+            "meet9.msg3":
+              "Saat white ball jatuh dan kamu ingin mengambilnya, aku justru bertingkah tidak seharusnya.",
+            "meet9.msg4":
+              "Maaf ya untuk itu. Aku seharusnya lebih menjaga sikap.",
+            "meet9.msg5":
+              "Meskipun kamu terlihat agak kurang mood hari itu, aku tetap bersyukur bisa melihat kamu sehat dan hadir di sana.",
+
+            "meet10.title": "Pertemuan 10",
+            "meet10.location": "📍 Kopi Nako & Living World, Kota Wisata",
+            "meet10.msg1":
+              "Pertemuan ke-10 terjadi saat kamu libur kerja, dan aku mengajak kamu bertemu — kamu mau!",
+            "meet10.msg2":
+              "Aku berangkat sore menjelang maghrib, lalu salat maghrib sebelum akhirnya kamu membalas chat-ku.",
+            "meet10.msg3":
+              "Kita bertemu setelah sempat saling telepon, dan aku menjemputmu untuk ke Kopi Nako, Kota Wisata.",
+            "meet10.msg4":
+              "Di sana kita ngobrol, aku kerja proyek, dan momen lucu soal pesanan bakso kuanci yang sempat tertunda wkwk.",
+            "meet10.msg5":
+              "Setelah itu, kita ke Living World karena kamu ingin beli parfum, dan ada insiden tutup botol jatuh yang bikin panik 😅",
+            "meet10.msg6":
+              "Aku bantu ambil tutupnya, dan akhirnya kamu bisa beli parfum itu dengan lega.",
+            "meet10.msg7":
+              "Lalu kita ke Indomaret Fresh, beli minuman, duduk bareng dan ngobrol panjang soal masa lalu, cerita hidup, bahkan perasaan.",
+            "meet10.msg8":
+              "Kita bahas kalimat “I love you whatever you are” yang bikin kamu sempat ngambek kecil — maaf ya waktu itu wkwk.",
+            "meet10.msg9":
+              "Sebelum pulang, kita beli martabak, kamu ngajak foto bareng... momen itu sangat luar biasa dan penuh makna untukku.",
+
+            "meet11.title": "Pertemuan 11",
+            "meet11.location": "📍 Malam Takbiran Idul Adha",
+            "meet11.msg1":
+              "Malam itu adalah malam takbiran, tapi kita malah ketemuan — kamu minta dijemput wkwk.",
+            "meet11.msg2":
+              "Aku otw dari rumah ke Triple8 untuk menjemput kamu pulang kerja. Sempat malu pas naik ke atas, tapi akhirnya aku berani juga.",
+            "meet11.msg3":
+              'Pas keluar parkiran, satpam bilang "pacarnya ya?" — jujur malu banget wkwk!',
+            "meet11.msg4":
+              "Awalnya kita mau ke wahana dekat rumah kamu, tapi setelah sampai, tempatnya terlalu sepi jadi batal.",
+            "meet11.msg5":
+              "Kita rencana makan steak, tapi tutup. Akhirnya ke Mie Gacoan Jatiasih dan kamu minta tolong bawa tas wkwk.",
+            "meet11.msg6":
+              "Pesanannya cepat datang, dan kamu pinjam HP buat hotspot pesanin lagi buat aku — sweet banget 😌",
+            "meet11.msg7":
+              "Pas buka saus, kamu keluarkan GUNTING dari tas — asli nggak ekspektasi, ngakak banget!",
+            "meet11.msg8":
+              "Kamu cerita dapat 50k dari koko owner karena lembur, tapi diminta mamamu buat jajan — dan aku bantu juga kasih pegangan.",
+            "meet11.msg9":
+              "Kita lanjut pesan minuman, tapi kamu bilang green tea-nya kemanisan wkwk, akhirnya dibungkusin pakai tutup plastik pressan!",
+            "meet11.msg10":
+              "Di perjalanan pulang kita ngobrol banyak soal hubungan kita. Sampai dekat rumahmu, jalannya di-portal jadi kamu jalan kaki deh 😅",
+
+            "meet12.title": "Pertemuan 12",
+            "meet12.location": "📍 Triple8 Billiard & Rumahmu",
+            "meet12.msg1":
+              "Hari itu adalah momen pertama aku menjemput kamu di rumah, dan pertama kalinya juga aku bersilaturahmi dengan mama kamu.",
+            "meet12.msg2":
+              "Jujur, aku nggak nyangka keluarga besarmu juga sedang ada di sana, dan mereka lagi bakar-bakar sate — suasananya hangat banget.",
+            "meet12.msg3":
+              "Aku bawa martabak, dan kamu serta keluargamu memberiku buah dan martabak juga. Kita menikmatinya bersama-sama di ruang tengah.",
+            "meet12.msg4":
+              "Aku ngobrol dengan mama kamu, dan melihat kamu di ruang tengah secara langsung buat pertama kalinya... itu bikin deg-degan luar biasa.",
+            "meet12.msg5":
+              "Setelah itu kita pergi ke Kota Wisata, sempat mampir dulu ke Lawson untuk jajan. Aku senang banget bisa melihat kamu bahagia di sana.",
+            "meet12.msg6":
+              "Tujuan akhirnya adalah Triple8 Billiard. Awalnya aku hanya niat mengerjakan tugas, tapi akhirnya aku memilih untuk melihat kamu kerja dari awal sampai akhir.",
+            "meet12.msg7":
+              "Kamu bekerja sangat luar biasa: penuh semangat, tidak gengsi, dan benar-benar total. Aku kagum dengan kerja keras dan keteguhan kamu.",
+            "meet12.msg8":
+              "Saat tempatnya tutup, aku bantu kamu nutupin meja billiard — momen kecil yang aku simpan dalam hati.",
+            "meet12.msg9":
+              "Lalu kita turun, dan momen bersejarah terjadi: kamu belajar motor pertama kali sama aku. Aku bangga bisa mengajari kamu secara langsung.",
+            "meet12.msg10":
+              "Kamu berhasil mengendarai motorku sampai rumah... dan itu jadi pencapaian indah yang nggak akan pernah aku lupakan.",
+
+            "meet13.title": "Pertemuan 13",
+            "meet13.location":
+              "📍 Bekasi — Kayuringin, Summarecon, & Alun-Alun",
+            "meet13.msg1":
+              "Pertemuan ke-13 ini jadi salah satu yang tak akan pernah aku lupakan. Seperti biasa, aku menjemputmu di rumah — dan ternyata, aku kembali bertemu dengan mamamu. Kita berpamitan dengan sopan, dan itu membuatku merasa semakin dekat, bukan hanya denganmu… tapi juga dengan keluargamu.",
+            "meet13.msg2":
+              "Ada momen lucu waktu aku sempat menyarankan kamu bawa motorku — tapi mamamu langsung khawatir dan panik wkwk. Wajar banget, kamu masih dalam tahap belajar, dan aku bisa mengerti rasa sayangnya beliau padamu.",
+            "meet13.msg3":
+              "Setelah itu, kita melaju tanpa arah pasti, cuma ingin jalan-jalan. Tapi justru karena tanpa ekspektasi, momen itu jadi istimewa. Kita mengarah ke Bekasi, dan tanpa sadar menyusuri jalanan yang belum pernah kita lewati bersama sebelumnya.",
+            "meet13.msg4":
+              "Kita berhenti di daerah Kayuringin — tempat tinggal kak Jeden. Kita mampir ke Alfamart, beli minuman dan cemilan, lalu lanjut beli cimol. Rasanya sederhana, tapi momen-momen itu selalu berhasil membuat aku bahagia.",
+            "meet13.msg5":
+              "Perjalanan kita berlanjut ke Summarecon Bekasi. Aku gak nyangka bisa ajak kamu ke sana, karena sebelumnya itu hanya angan. Tapi hari itu, kamu di sampingku, menikmati kota, dan itu cukup buatku merasa bersyukur.",
+            "meet13.msg6":
+              "Malam menjelang, dan kita mulai lapar. Kita cari nasi goreng dan akhirnya nemu di dekat alun-alun Bekasi. Kita turun, pesan makanan, duduk bersama di trotoar yang tenang. Kamu beli kerupuk, dan mengingatkanku untuk habisin makananku — hal kecil yang penuh makna.",
+            "meet13.msg7":
+              "Setelah makan, aku sempat menunjuk tempat yang biasa aku datangi untuk me time. Sekarang kamu tahu — kamu tahu sedikit tentang jalur sunyiku. Itu bikin aku merasa kamu benar-benar bagian dari hidupku.",
+            "meet13.msg8":
+              "Di perjalanan pulang ke Ciangsana, kita ngobrol sepanjang jalan. Topik-topik kecil yang tumbuh jadi dalam. Dan di akhir malam, kamu sampai rumah dengan selamat, membawa tas pemberianku, dan membawa pulang sebagian kenangan luar biasa hari itu.",
+
+            "meet14.title": "Pertemuan 14",
+            "meet14.location":
+              "📍 Triple8 Billiard, Subuh di Kota Wisata, & Lontong Sayur Pagi",
+            "meet14.msg1":
+              "Awalnya aku cuma ingin me time. Aku bingung mau ke mana, sampai akhirnya kuputuskan ke Triple8 Billiard lagi. Di parkiran, aku bertemu Bang Jamal dan kami seperti biasa bercanda sebentar.",
+            "meet14.msg2":
+              "Aku masuk, pesan minum, dan duduk santai. Awalnya kupikir yang di kasir itu Kak Lidya, tapi ternyata bukan. Aku belum tahu siapa orang baru itu.",
+            "meet14.msg3":
+              "Aku mulai main billiard di regular table — dua jam. Aku belajar dan terus mencoba, dibimbing Kak Jeden, dan kamu juga melihatku belajar meskipun belum jago.",
+            "meet14.msg4":
+              "Kita main bareng juga — game push-up. Kalau gak masukin bola, harus push-up. Aku cuma berhasil masukin 3 bola... sisanya push-up! Kamu? Gagal semua, 10x push-up! Wkwk, seru banget momen itu.",
+            "meet14.msg5":
+              "Waktu habis, aku tambah 1 jam lagi. Aku sempat break sebentar untuk makan dan buka laptop. Setelah itu lanjut main lagi sampai hampir subuh.",
+            "meet14.msg6":
+              "Aku temani kamu kerja sampai selesai — untuk kedua kalinya. Jam setengah 4 pagi aku selesai main. Kita beres-beres bareng, nutupin meja billiard juga.",
+            "meet14.msg7":
+              "Turun ke parkiran, Bang Jamal nelpon karena motorku belum dikunci setang, wkwkw. Tapi ternyata udah. Lalu kamu mulai bawa motor lagi, dan ini jadi momen belajar motor keduamu denganku.",
+            "meet14.msg8":
+              "Kita sholat subuh di Masjid Darussalam, Kota Wisata. Setelah itu, kita muter kota dan kamu kepikiran makan lontong sayur tetanggaku. Kita putuskan ke Bekasi demi itu.",
+            "meet14.msg9":
+              "Di jalan, kamu ingat Tiara sakit, dan kita rencanakan beli bubur juga. Tapi karena kamu udah ngidam, kita cari lontong dulu. Isi bensin dulu di Shell, pompa ban, lanjut perjalanan.",
+            "meet14.msg10":
+              "Sampai juga di tempat lontong sayur. Awalnya kamu canggung, tapi lalu kamu menikmati banget rasanya. Kita makan bareng... momen pagi yang gak biasa, tapi terasa sangat hangat.",
+            "meet14.msg11":
+              "Setelah itu, kita balik ke Bogor. Aku sempat salah jalan wkwk, malah ke arah Kemang Pratama, terus muter lewat Rawalumbu, Cipendawa, dan Jatiasih — jalan kenangan kita.",
+            "meet14.msg12":
+              "Kita mampir beli bubur buat Tiara — bubur favoritnya yang biasa dibelikan mamamu. Lalu aku antar kamu pulang dengan rasa puas dan bahagia luar biasa.",
+            "meet14.msg13":
+              "Tak pernah kuduga momen dari malam hingga jam 8 pagi seperti ini bisa terjadi lagi. Tapi ternyata, kita mengulang kisah luar biasa bersama — untuk kedua kalinya.",
+
+            "meet15.title": "Pertemuan 15",
+            "meet15.location":
+              "📍 Triple8 Billiard – Bubur, Larutan, dan Rasa Peduli",
+            "meet15.msg1":
+              "Di pertemuan ini, kamu sedang tidak enak badan — tenggorokan dan perutmu kurang baik. Aku saat itu sedang bersama temanku.",
+            "meet15.msg2":
+              "Aku menawarkan untuk membelikan obat, tapi kamu menolaknya dengan halus. Aku tahu kamu hanya merasa tidak enak hati.",
+            "meet15.msg3":
+              "Tapi kamu tetap berinisiatif — kamu minta dibelikan bubur dan larutan cap kaki tiga. Satu botol biasa dan satu kaleng rasa.",
+            "meet15.msg4":
+              "Aku membelikannya dan bersama temanku aku mengantarkannya ke Triple8 Billiard. Di sana aku juga ingin bermain billiard bersama temanku.",
+            "meet15.msg5":
+              "Aku memintamu menghampiriku. Dan tanpa kuduga... kamu mengelus kepalaku lembut. Aku kaget, terdiam.",
+            "meet15.msg6":
+              "Aku sadar — itu bukan sekadar elusan biasa. Itu cara kamu berterima kasih, dan cara kamu menunjukkan rasa sayang.",
+            "meet15.msg7":
+              "Terima kasih untuk rasa hangat itu. Aku main billiard satu jam, dan setelahnya hanya duduk menikmati iced tea sebentar lalu pulang.",
+            "meet15.msg8":
+              "Di perjalanan pulang, aku gak berhenti berdoa — supaya kamu cepat pulih, selalu sehat, dan selalu dalam lindungan Tuhan.",
+            "meet15.msg9":
+              "Meskipun momen itu sederhana, tapi aku menyimpannya dalam-dalam. Karena aku tahu, itu bentuk sayang yang nyata dari kamu.",
+
+            "meet16.title": "Pertemuan 16",
+            "meet16.location":
+              "📍 Kulineran Bakso, Ciangsana - Gunung Putri, Kabupaten Bogor",
+            "meet16.msg1":
+              "Aku mendadak ingin kulineran bakso di Ciangsana, Gunung Putri, Kabupaten Bogor — dan kamu kuajak dadakan! Wkwkwk.",
+            "meet16.msg2":
+              "Untungnya kamu mau, karena kamu juga pengen makan. Jadi aku jemput ke rumahmu seperti biasa.",
+            "meet16.msg3":
+              "Sesampainya di rumahmu, jaringanku tiba-tiba hilang seperti kuota habis — padahal ternyata hanya sinyalnya menyebalkan.",
+            "meet16.msg4":
+              "Yang luar biasa, kali ini ayahmu menyambutku dan mempersilakan masuk — untuk kedua kalinya aku masuk ke rumahmu.",
+            "meet16.msg5":
+              "Aku ngobrol banyak dengan ayahmu — mulai dari pekerjaan beliau di bidang energi listrik, hingga keahliannya dalam memperbaiki instalasi listrik. Aku sangat takjub!",
+            "meet16.msg6":
+              "Setelah kamu siap, kita berpamitan bersama pada ayahmu, dan berangkat menuju rumah Lala di Bumi Mutiara karena kamu ingin beli baju.",
+            "meet16.msg7":
+              "Kamu kekurangan Rp15.000 dan aku menambahkannya — dan sepanjang jalan kita ngobrol seru, mulai dari cerita ayahmu hingga topik-topik lainnya.",
+            "meet16.msg8":
+              "Sesampainya di rumah Lala, kamu turun sendiri dan aku menunggumu di luar.",
+            "meet16.msg9":
+              "Setelah membeli baju, kita langsung meluncur ke tempat kulineran bakso di luar Komplek Kota Wisata — aku sempat linglung karena belum tahu tempatnya wkwkwk.",
+            "meet16.msg10":
+              "Kita memesan bakso — kamu pilih bakso urat dan bakso telur, aku juga. Minumnya air putih aja biar netral, katanya hehehe.",
+            "meet16.msg11":
+              "Momen itu luar biasa... sederhana tapi hangat. Dan sempat ada momen kocak waktu kamu disuruh cepat-cepat sama Mbak Dita lewat WA! 🤭",
+            "meet16.msg12":
+              "Setelah makan, kita langsung berangkat ke Triple8 untuk mengantar kamu kerja. Di jalan, kita ngobrol lagi.",
+            "meet16.msg13":
+              "Kamu pamit saat sampai, dan sebelum pulang aku sempat menyapa Kak Jeden lagi di luar wkwkw. Lalu aku pulang dengan hati yang penuh.",
+
+            "meet17.title": "Pertemuan 17",
+            "meet17.location":
+              "📍 Pondok Gede, Jatimakmur, Jatiasih & Jus Corner",
+            "meet17.msg1":
+              "Hari itu kamu libur, dan aku sangat senang sekali karena kita bisa bertemu lagi.",
+            "meet17.msg2":
+              "Aku agak telat menjemputmu karena harus antar mamaku beli buah dulu. Tapi sepanjang jalan kita teleponan — dan itu bikin aku bahagia.",
+            "meet17.msg3":
+              "Saat sampai di rumahmu, aku takjub... kamu tampil sangat cantik. Aku bahagia luar biasa.",
+            "meet17.msg4":
+              "Kita berangkat menuju Pondok Gede supaya kamu bisa lihat dunia luar selain Bogor, wkwk.",
+            "meet17.msg5":
+              "Dalam perjalanan kita banyak ngobrol, berbagi cerita, dan rasanya luar biasa banget.",
+            "meet17.msg6":
+              "Saat sampai di Jatimakmur ternyata macet parah — nyebelin, tapi tetap kita lanjut.",
+            "meet17.msg7":
+              "Sampai di Pondok Gede kamu lihat sekeliling, dan mulai mengenal area dekat Jakarta Timur.",
+            "meet17.msg8":
+              "Setelah itu kita balik ke arah Jatiasih, lalu mampir ke Jus Corner di daerah Komsen.",
+            "meet17.msg9":
+              "Kamu pesan jus alpukat, aku pesan jus pisang. Kalau tidak salah kita juga makan pempek & kentang goreng.",
+            "meet17.msg10":
+              "Di sana aku menunjukkan progres hadiah spesial untukmu — dan kamu melihat langsung makna di baliknya.",
+            "meet17.msg11":
+              "Itu tanda sayangku untukmu. Maaf kalau belum sempurna, tapi aku yakin kamu bisa rasakan niat dan ketulusannya.",
+            "meet17.msg12":
+              "Kita ngobrol hangat, berfoto-foto, dan jujur... itu momen yang sangat aku maknai dan tak akan kulupakan.",
+            "meet17.msg13":
+              "Sebelum pulang, aku mengajakmu ke arah rumahku agar kamu tahu jalan dan lebih mengenal wilayah luar.",
+            "meet17.msg14":
+              "Kita sempat berhenti karena lelah, malam makin larut. Kamu akhirnya tahu arah rumahku.",
+            "meet17.msg15":
+              "Setelah itu, aku mengantarmu pulang — sebelumnya kita mampir dulu beli nasi goreng SM yang pernah kamu pesan di ShopeeFood.",
+            "meet17.msg16":
+              "Kita beli dua porsi untuk kamu dan mamamu. Tapi karena sudah larut, aku hanya bisa mengantar sampai portal.",
+            "meet17.msg17":
+              "Maaf ya... aku ingin antar sampai rumah, tapi situasinya sudah terlalu malam.",
+            "meet17.msg18":
+              "Paginya kamu dimarahi mamamu, dan aku merasa sangat bersalah. Seharusnya kita tidak pulang terlalu malam.",
+            "meet17.msg19":
+              "Tapi meski begitu... momen itu sangat luar biasa dan akan terus aku ingat selamanya.",
+
+            // Bagian sosial media
+            "social.title": "Temukan Intan di:",
+            "social.instagram": "Instagram",
+            "social.tiktok": "TikTok",
+            "social.whatsapp": "WhatsApp",
+          },
+
+          en: {
+            "title.page": "Story - Intan Nurhidayah",
+
+            "nav.home": "Home",
+            "nav.about": "About",
+            "nav.story": "Story",
+            "nav.gallery": "Gallery",
+            "footer.line1": "Created with ❤️ for",
+            "footer.line2": "Bekasi ✦ Ciangsana ✦ Bogor",
+
+            "hero.title":
+              "Seventeen Points of Encounter, One Line of Our Story.",
+            "hero.subtitle":
+              "A small journey full of meaning. Seventeen moments merged in memories with Intan Nurhidayah.",
+            "btn.meet1": "Meeting 1",
+            "btn.meet2": "Meeting 2",
+            "btn.meet3": "Meeting 3",
+            "btn.meet4": "Meeting 4",
+            "btn.meet5": "Meeting 5",
+            "btn.meet6": "Meeting 6",
+            "btn.meet7": "Meeting 7",
+            "btn.meet8": "Meeting 8",
+            "btn.meet9": "Meeting 9",
+            "btn.meet10": "Meeting 10",
+            "btn.meet11": "Meeting 11",
+            "btn.meet12": "Meeting 12",
+            "btn.meet13": "Meeting 13",
+            "btn.meet14": "Meeting 14",
+            "btn.meet15": "Meeting 15",
+            "btn.meet16": "Meeting 16",
+            "btn.meet17": "Meeting 17",
+
+            "meet1.title": "Meeting 1",
+            "meet1.location": "📍 Kopi Nako, Kota Wisata <br>Breaking Fast",
+            "meet1.msg1":
+              "Intan, I still remember our first meeting at Kopi Nako, Kota Wisata.",
+            "meet1.msg2":
+              "That day was so special because I got to meet you in person for the first time.",
+            "meet1.msg3":
+              "From our first conversation, I knew you were truly special.",
+            "meet1.msg4":
+              "Thank you for coming that day and for the warmth you brought.",
+
+            "meet2.title": "Meeting 2",
+            "meet2.location": "📍 Gacoan & Living World",
+            "meet2.msg1":
+              "I had just returned from Eid trip and wanted to meet you immediately.",
+            "meet2.msg2":
+              "We met at Mie Gacoan, and you even brought the book I was looking for.",
+            "meet2.msg3":
+              "We then went to Living World, got ice cream — I laughed so hard when you got messy eating it.",
+            "meet2.msg4":
+              "Simple moments like that mean so much to me. Thank you for being there.",
+
+            "meet3.title": "Meeting 3",
+            "meet3.location": "📍 Living World & Gacoan",
+            "meet3.msg1":
+              "I picked you up in front of SD because I wasn’t ready to go directly to your house yet.",
+            "meet3.msg2": "We shared snacks and watched the movie “Sinners”.",
+            "meet3.msg3":
+              "I accidentally slept on your shoulder — and that moment will never be forgotten.",
+            "meet3.msg4":
+              "Thank you for the warmth and comfort you gave me that day.",
+
+            "meet4.title": "Meeting 4",
+            "meet4.location": "📍 Joffi Ramen, Gunung Putri",
+            "meet4.msg1":
+              "Rain almost stopped us from meeting, but we made it anyway.",
+            "meet4.msg2":
+              "Our chats during the ride, laughter at the table — it was all simple but meaningful.",
+            "meet4.msg3":
+              "You even accompanied me to buy fruits afterward. That meant a lot to me.",
+            "meet4.msg4":
+              "Thank you for showing up, even on a rainy and uncertain night.",
+
+            "meet5.title": "Meeting 5",
+            "meet5.location": "📍 Jatiasih & Grand Galaxy Park, Bekasi",
+            "meet5.msg1":
+              "Before picking you up, I bought a raincoat — but accidentally a kid’s size wkwk.",
+            "meet5.msg2":
+              "I forgot your helmet, but you still came with a smile under the drizzle.",
+            "meet5.msg3":
+              "We ate bakso, bought food for your mom, and I gave you my helmet to stay dry.",
+            "meet5.msg4":
+              "Thank you, Tan. For such a warm, faraway, unforgettable day.",
+
+            "meet6.title": "Meeting 6",
+            "meet6.location": "📍 Mixue, Ruko Orange Ciangsana",
+            "meet6.msg1":
+              "It was a spontaneous meetup and you said yes — even in simple clothes, which didn’t matter to me.",
+            "meet6.msg2":
+              "I picked you up as usual and we went to Mixue Ruko Orange Ciangsana.",
+            "meet6.msg3":
+              "We ordered, went upstairs, turned on the AC, sat down, and started talking.",
+            "meet6.msg4":
+              "You shared such an incredible story... and I even pranked you with skin and charisma — so fun!",
+            "meet6.msg5":
+              "When the place was closing, I had something to say... but the timing wasn’t right. It’s okay.",
+            "meet6.msg6":
+              "We ordered Mixue for your family, then I took you home. What a lovely moment!",
+
+            "meet7.title": "Meeting 7",
+            "meet7.location": "📍 Kota Wisata & Triple8 Billiard",
+            "meet7.msg1":
+              "That day I had just finished work, and you were waiting for the UTBK-SNBT 2025 results.",
+            "meet7.msg2":
+              "It was also your first day working at Triple8 Billiard. You were jogging in Kota Wisata when I said I’d come.",
+            "meet7.msg3":
+              "I arrived after Maghrib and looked for you, but couldn’t find you. I called, and we finally met to the left of Living World.",
+            "meet7.msg4":
+              "You were in a rush to work, but we still checked my UTBK result — I didn’t pass, and though I was sad, I accepted it.",
+            "meet7.msg5":
+              "You gave me encouragement that made me feel better. I took you home, then thought about visiting your new workplace.",
+            "meet7.msg6":
+              "I asked my friend to play billiards at Triple8. You were surprised to see me. We played 2 hours, and my friend said you were flustered seeing me.",
+            "meet7.msg7":
+              "Honestly, I was too. But seeing you work for the first time made me proud and warm inside. I went home at 00.40 with a smile.",
+
+            "meet8.title": "Meeting 8",
+            "meet8.location": "📍 Triple8 Billiard, Kota Wisata",
+            "meet8.msg1":
+              "I went back to Triple8 Billiard, where you work, just to hang out casually.",
+            "meet8.msg2":
+              "I arrived around 10 PM and ordered food & drinks from Kak Lidia.",
+            "meet8.msg3":
+              "Kak Lidia said, “do you want to order or are you looking for Intan?” — honestly I was shocked and flustered 😳",
+            "meet8.msg4":
+              "I used my laptop until midnight, then booked the VIP table for 3 hours — and finally we met directly.",
+            "meet8.msg5":
+              "We played billiards together — it was so fun! I was really happy to talk and laugh with you again.",
+            "meet8.msg6":
+              "I remember leaving around 2:30 AM, but I went home with a happy heart knowing you were doing great at work.",
+
+            "meet9.title": "Meeting 9",
+            "meet9.location": "📍 Triple8 Billiard (Again)",
+            "meet9.msg1":
+              "I played billiards again with my friend, and although it was brief, I got to see you.",
+            "meet9.msg2":
+              "Honestly, I was flustered because of my friend’s odd behavior that day wkwk.",
+            "meet9.msg3":
+              "When the white ball fell and you went to get it, I reacted in a way I shouldn’t have.",
+            "meet9.msg4":
+              "I’m really sorry for that. I should’ve behaved more appropriately.",
+            "meet9.msg5":
+              "Even though your mood seemed a little off, I’m truly grateful I got to see you that day, healthy and present.",
+
+            "meet10.title": "Meeting 10",
+            "meet10.location": "📍 Kopi Nako & Living World, Kota Wisata",
+            "meet10.msg1":
+              "The 10th meeting happened while you were off work, and I invited you — and you said yes!",
+            "meet10.msg2":
+              "I left around maghrib, prayed first, and waited for your reply.",
+            "meet10.msg3":
+              "We finally talked by phone and I picked you up to go to Kopi Nako, Kota Wisata.",
+            "meet10.msg4":
+              "There we chatted, I worked on a project, and the funny moment when your bakso kuanci got delayed wkwk.",
+            "meet10.msg5":
+              "After that, we went to Living World to buy perfume, and had a funny panic moment with the perfume cap falling 😅",
+            "meet10.msg6":
+              "I helped retrieve it, and you were able to choose your perfume happily.",
+            "meet10.msg7":
+              "Then we went to Indomaret Fresh, bought drinks, sat down and talked deeply about the past, life, and feelings.",
+            "meet10.msg8":
+              "We talked about “I love you whatever you are” — which made you a bit upset. Sorry for being hesitant back then wkwk.",
+            "meet10.msg9":
+              "Before heading home, we bought martabak and took photos together — such a meaningful, beautiful night for me.",
+
+            "meet11.title": "Meeting 11",
+            "meet11.location": "📍 Eid al-Adha Takbir Night",
+            "meet11.msg1":
+              "It was takbir night, but we went on a little “date” — you asked me to pick you up wkwk.",
+            "meet11.msg2":
+              "I went from home to Triple8 to pick you up. I was shy to go upstairs, but I pushed myself.",
+            "meet11.msg3":
+              "As we left the parking area, the guard said “is that your partner?” — I was embarrassed wkwk!",
+            "meet11.msg4":
+              "We planned to go to a small amusement ride near your house, but it was quiet and empty, so we canceled.",
+            "meet11.msg5":
+              "You suggested steak, but it was closed. We ended up at Mie Gacoan Jatiasih and you asked me to carry your bag wkwk.",
+            "meet11.msg6":
+              "The food came fast, and you borrowed my phone to hotspot and order more for me — so sweet 😌",
+            "meet11.msg7":
+              "When opening sauce, you pulled SCISSORS from your bag — never expected that, I cracked up!",
+            "meet11.msg8":
+              "You told me you got 50k from the owner for overtime, but your mom asked for it — so I helped a bit too.",
+            "meet11.msg9":
+              "We ordered more drinks, but yours was too sweet — got it packed using that sealing plastic machine!",
+            "meet11.msg10":
+              "On the way home, we talked deeply about our relationship. Near your home, streets were closed off so you had to walk in 😅",
+
+            "meet12.title": "Meeting 12",
+            "meet12.location": "📍 Triple8 Billiard & Your Home",
+            "meet12.msg1":
+              "That day was the first time I picked you up from your house, and also my first time meeting your mom and visiting your home.",
+            "meet12.msg2":
+              "Honestly, I didn’t expect your extended family to be there, and they were having a barbecue — the atmosphere felt so warm.",
+            "meet12.msg3":
+              "I brought martabak, and your family offered me fruits and martabak too. We enjoyed them together in your living room.",
+            "meet12.msg4":
+              "I had a lovely conversation with your mom, and seeing you in the living room — it made my heart beat faster, truly unforgettable.",
+            "meet12.msg5":
+              "Afterward, we headed to Kota Wisata and stopped by Lawson for snacks. I felt so happy seeing you there, just enjoying the moment.",
+            "meet12.msg6":
+              "We arrived at Triple8 Billiard. I initially came just to work on my tasks, but ended up watching you work from beginning to end.",
+            "meet12.msg7":
+              "You worked incredibly hard: full of spirit, unafraid of challenges, and gave your all. I was amazed and deeply inspired by your dedication.",
+            "meet12.msg8":
+              "When it was closing time, I helped you cover the billiard tables — a small moment that I’ll keep close to my heart.",
+            "meet12.msg9":
+              "Then we went downstairs, and a beautiful memory happened: I taught you to ride a motorcycle for the first time.",
+            "meet12.msg10":
+              "You rode all the way home on my bike — a proud achievement for you, and a memory I’ll cherish forever.",
+
+            "meet13.title": "Meeting 13",
+            "meet13.location":
+              "📍 Bekasi — Kayuringin, Summarecon, & Town Square",
+            "meet13.msg1":
+              "Meeting 13 became one of those moments I’ll never forget. I picked you up from home like usual, and once again met your mom. We greeted her politely before leaving, and it made me feel like I was growing closer — not just to you, but to your whole family.",
+            "meet13.msg2":
+              "There was a funny moment when I suggested you ride the motorbike — but your mom got nervous and panicked a bit. Totally understandable, you’re still learning after all.",
+            "meet13.msg3":
+              "We headed off with no specific plan, just wanting to ride around. And strangely, those unplanned rides always turn out to be the most special. We ended up exploring Bekasi together.",
+            "meet13.msg4":
+              "We stopped by Kayuringin — where Kak Jeden lives. We grabbed some drinks and snacks from Alfamart, bought some cimol, and continued the ride. It all felt simple but deeply comforting.",
+            "meet13.msg5":
+              "Then came Summarecon Bekasi. I never thought I’d be able to take you there. But that day, you were right beside me, and everything felt right — like life was saying, 'this is your person.'",
+            "meet13.msg6":
+              "Night came and we got hungry. We searched for fried rice and finally found a vendor at the town square. We ordered, sat quietly, and you bought crackers while reminding me to finish my food — sweet in such a small, meaningful way.",
+            "meet13.msg7":
+              "I showed you the place I usually go for some 'me time'. Now you know it. You’ve seen the quiet path I usually walk — and that made me feel like you’ve entered my inner world.",
+            "meet13.msg8":
+              "On the ride back to Ciangsana, we talked nonstop. Little conversations became meaningful, and when you arrived home safely with the bag I gave you, I felt nothing but gratitude and joy for the day we had.",
+
+            "meet14.title": "Meeting 14",
+            "meet14.location":
+              "📍 Triple8 Billiard, Subuh in Kota Wisata, & Morning Lontong Sayur",
+            "meet14.msg1":
+              "Initially I just wanted some me-time. I wasn’t sure where to go, but I ended up heading to Triple8 Billiard again. At the parking lot, I bumped into Bang Jamal and we joked around a bit as usual.",
+            "meet14.msg2":
+              "I went in, ordered a drink, and relaxed. I thought the cashier was Kak Lidya, but it turned out to be someone else — I didn’t know her yet.",
+            "meet14.msg3":
+              "I played on the regular table for two hours, learning as I went. Kak Jeden gave me some tips, and you watched me — even though I was still far from good.",
+            "meet14.msg4":
+              "We played a push-up game — if you miss a shot, you do push-ups. I only sank 3 balls, the rest… push-up! You didn’t get any in, so 10x for you too! 😂 It was a super fun challenge.",
+            "meet14.msg5":
+              "My session ended, but I added one more hour. I paused around midnight to eat and work on my laptop, then played again until almost dawn.",
+            "meet14.msg6":
+              "I stayed with you through your shift — for the second time. At 3:30 AM, I wrapped up and helped cover the billiard tables during cleanup.",
+            "meet14.msg7":
+              "Down at the parking lot, Bang Jamal called you because my bike wasn’t locked — but it actually was. Then, you started riding the motor again — your second riding lesson with me.",
+            "meet14.msg8":
+              "We prayed subuh at Masjid Darussalam in Kota Wisata. After that, we rode around and you said you wanted lontong sayur — the one my neighbor sells. We decided to go to Bekasi just for that.",
+            "meet14.msg9":
+              "On the way, you remembered Tiara was sick — so we also planned to get porridge for her. But your craving came first, so lontong it was. We stopped at Shell to refuel and inflate the tires.",
+            "meet14.msg10":
+              "We reached the lontong spot. You were shy at first, but then you enjoyed the food so much. We sat down and shared one of the most peaceful breakfasts I’ve ever had with you.",
+            "meet14.msg11":
+              "After eating, we headed back to Bogor. I took a wrong turn — went to Kemang Pratama, then rerouted through Rawalumbu, Cipendawa, and Jatiasih — one of our old paths.",
+            "meet14.msg12":
+              "We stopped to buy Tiara’s favorite porridge — the one your mom usually gets her. Then I brought you home, smiling all the way.",
+            "meet14.msg13":
+              "I never expected another night-to-morning journey like this to happen again. But somehow, we created another unforgettable chapter together.",
+
+            "meet15.title": "Meeting 15",
+            "meet15.location":
+              "📍 Triple8 Billiard – Porridge, Herbal Drink, and Affection",
+            "meet15.msg1":
+              "In this meeting, you weren’t feeling well — your throat and stomach were bothering you. I happened to be with my friend that day.",
+            "meet15.msg2":
+              "I offered to get you some medicine, but you politely declined. I understood you didn’t want to trouble me.",
+            "meet15.msg3":
+              "Still, you took the initiative — asking for porridge and two bottles of Cap Kaki Tiga herbal drink: one plain and one flavored.",
+            "meet15.msg4":
+              "I bought them and went to Triple8 Billiard with my friend. I also planned to play billiard with him for a while.",
+            "meet15.msg5":
+              "I asked you to come over to me. And then, unexpectedly... you gently stroked my head. I was stunned, caught off guard.",
+            "meet15.msg6":
+              "But I realized — it wasn’t just a gesture. It was your way of saying thank you. A quiet way to express care and love.",
+            "meet15.msg7":
+              "Thank you for that warm, gentle moment. I played billiard for an hour, then sat quietly with my iced tea before heading home.",
+            "meet15.msg8":
+              "On the way back, I kept praying — for your recovery, your health, and for God to protect you always.",
+            "meet15.msg9":
+              "Even though it was a small moment, I’ll treasure it. Because I know... that was your love, quietly shown.",
+
+            "meet16.title": "Meeting 16",
+            "meet16.location":
+              "📍 Meatball Culinary, Ciangsana - Gunung Putri, Bogor Regency",
+            "meet16.msg1":
+              "I suddenly wanted to go for a meatball culinary trip in Ciangsana, Gunung Putri, Bogor — and I asked you out spontaneously! Wkwkwk.",
+            "meet16.msg2":
+              "Thankfully, you said yes — you were hungry too. So I picked you up from your house like usual.",
+            "meet16.msg3":
+              "When I arrived at your place, the internet connection suddenly dropped — I thought my data was out, but it was just bad signal.",
+            "meet16.msg4":
+              "What made it special was your dad welcoming me in — it was the second time I entered your house.",
+            "meet16.msg5":
+              "We chatted a lot. Your dad works in the energy and electricity field, and he's very skilled at fixing wiring. I was truly impressed!",
+            "meet16.msg6":
+              "Once you were ready, we said goodbye to your dad and headed to Lala’s house in Bumi Mutiara so you could buy a shirt.",
+            "meet16.msg7":
+              "You were short by 15,000 IDR, and I helped cover it. On the way, we had some fun talks — from your dad’s story to other random topics.",
+            "meet16.msg8":
+              "At Lala's place, you went in while I waited outside.",
+            "meet16.msg9":
+              "After buying the shirt, we drove straight to the meatball stall outside the Kota Wisata complex — I was a bit clueless about the route wkwkwk.",
+            "meet16.msg10":
+              "We ordered — you chose meatballs with tendon and egg fillings, I did too. We both drank plain water — just to balance it out, you said hehe.",
+            "meet16.msg11":
+              "It was such a cozy moment… simple yet warm. There was a funny part when Mbak Dita messaged you to hurry up 🤭",
+            "meet16.msg12":
+              "After we ate, I took you to Triple8 for your shift. We talked a bit more on the way.",
+            "meet16.msg13":
+              "You said goodbye when we arrived, and before I left, I greeted Kak Jeden again outside wkwkwk. Then I went home, feeling full — in every way.",
+
+            "meet17.title": "Meeting 17",
+            "meet17.location":
+              "📍 Pondok Gede, Jatimakmur, Jatiasih & Juice Corner",
+            "meet17.msg1":
+              "That day, you were off work — and I was so happy we could meet again.",
+            "meet17.msg2":
+              "I was a bit late picking you up because I had to take my mom to buy fruit for an event. But we talked on the phone during the trip, and it made me so happy.",
+            "meet17.msg3":
+              "When I arrived, I was amazed — you looked absolutely beautiful. I was so happy and proud.",
+            "meet17.msg4":
+              "We went to Pondok Gede so you could explore outside Bogor a little bit.",
+            "meet17.msg5":
+              "On the way, we had deep conversations, shared thoughts and stories — it was really meaningful.",
+            "meet17.msg6":
+              "When we got to Jatimakmur, it was super jammed — a bit annoying but we kept going.",
+            "meet17.msg7":
+              "Arriving at Pondok Gede, you saw the area and realized it was close to East Jakarta too.",
+            "meet17.msg8":
+              "Then we headed back to Jatiasih, and stopped by a juice place near Komsen.",
+            "meet17.msg9":
+              "You ordered avocado juice, I got banana juice — and I think we had pempek and fries too.",
+            "meet17.msg10":
+              "There, I showed you the progress of a special gift I'm working on just for you.",
+            "meet17.msg11":
+              "That gift is a symbol of how much I care about you. Sorry if it’s still in progress — but I’m sure you felt the meaning behind it.",
+            "meet17.msg12":
+              "We talked, laughed, took photos — and I truly cherished every second of that moment.",
+            "meet17.msg13":
+              "Before taking you home, I took a detour to show you the way to my house — so you could see more of the world outside.",
+            "meet17.msg14":
+              "We paused for a while because we were tired — it was late. But you finally knew the way to my house.",
+            "meet17.msg15":
+              "After that, I drove you home — but first we picked up some SM fried rice that you had once ordered via ShopeeFood.",
+            "meet17.msg16":
+              "We got two portions — for you and your mom. But because it was so late, I could only take you as far as the gate.",
+            "meet17.msg17":
+              "I'm really sorry… I wish I could've taken you all the way to your door, but it was already late.",
+            "meet17.msg18":
+              "The next morning you got scolded by your mom — and I felt so guilty. It was my fault for staying out so late.",
+            "meet17.msg19":
+              "Still… the memory we made that night was unforgettable and deeply meaningful to me.",
+
+             // Social media section
+            "social.title": "Find Intan on:",
+            "social.instagram": "Instagram",
+            "social.tiktok": "TikTok",
+            "social.whatsapp": "WhatsApp"
+          },
+        };
+
+        function applyTranslation(lang) {
+          document.querySelectorAll("[data-i18n]").forEach((el) => {
+            const key = el.getAttribute("data-i18n");
+            if (translations[lang] && translations[lang][key]) {
+              el.innerHTML = translations[lang][key];
+            }
+          });
+
+          // 🔥 Tambahkan ini untuk update <title>
+          if (translations[lang] && translations[lang]["title.page"]) {
+            document.title = translations[lang]["title.page"];
+          }
+
+          langText.textContent = lang.toUpperCase();
+          langTextMobile.textContent = lang.toUpperCase();
+          localStorage.setItem("lang", lang);
+        }
+
+        function toggleLanguage() {
+          const currentLang = localStorage.getItem("lang") || "id";
+          const nextLang = currentLang === "id" ? "en" : "id";
+          applyTranslation(nextLang);
+        }
+
+        langToggle.addEventListener("click", toggleLanguage);
+        langToggleMobile.addEventListener("click", toggleLanguage);
+
+        // Initial load
+        applyTranslation(localStorage.getItem("lang") || "id");
+
+        // Set current year in footer
+        document.getElementById("year").textContent = new Date().getFullYear();
+        setActiveNavLink();
+      });
+
+      // Nav Link Active
+      // Highlight active nav link
+      const normalize = (path) => path.replace(/\/+$/, ""); // normalize: remove trailing slashes
+
+      function normalizePath(path) {
+        // Hilangkan semua slash di akhir (/, //, dll.) kecuali root "/"
+        return path.length > 1 ? path.replace(/\/+$/, "") : path;
+      }
+
+      function setActiveNavLink() {
+        const currentPath = normalizePath(window.location.pathname);
+        const navLinks = document.querySelectorAll('a[href^="/"]'); // Semua link internal
+
+        navLinks.forEach((link) => {
+          const linkPath = normalizePath(link.getAttribute("href"));
+          if (linkPath === currentPath) {
+            link.classList.add("text-pink-500", "font-semibold");
+          } else {
+            link.classList.remove("text-pink-500", "font-semibold");
+          }
+        });
+      }
+
+      function scrollToMeet(num) {
+        const section = document.querySelector(`#meet${num}`);
+        if (section) section.scrollIntoView({ behavior: "smooth" });
+      }
+    </script>
+    <script>
+      const storyMap = {
+        1: ["meet1.msg1", "meet1.msg2", "meet1.msg3", "meet1.msg4"],
+        2: ["meet2.msg1", "meet2.msg2", "meet2.msg3", "meet2.msg4"],
+        3: ["meet3.msg1", "meet3.msg2", "meet3.msg3", "meet3.msg4"],
+        4: ["meet4.msg1", "meet4.msg2", "meet4.msg3", "meet4.msg4"],
+        5: ["meet5.msg1", "meet5.msg2", "meet5.msg3", "meet5.msg4"],
+        6: [
+          "meet6.msg1",
+          "meet6.msg2",
+          "meet6.msg3",
+          "meet6.msg4",
+          "meet6.msg5",
+          "meet6.msg6",
+        ],
+        7: [
+          "meet7.msg1",
+          "meet7.msg2",
+          "meet7.msg3",
+          "meet7.msg4",
+          "meet7.msg5",
+          "meet7.msg6",
+          "meet7.msg7",
+          "meet7.msg8",
+        ],
+        8: [
+          "meet8.msg1",
+          "meet8.msg2",
+          "meet8.msg3",
+          "meet8.msg4",
+          "meet8.msg5",
+          "meet8.msg6",
+        ],
+        9: [
+          "meet9.msg1",
+          "meet9.msg2",
+          "meet9.msg3",
+          "meet9.msg4",
+          "meet9.msg5",
+        ],
+        10: [
+          "meet10.msg1",
+          "meet10.msg2",
+          "meet10.msg3",
+          "meet10.msg4",
+          "meet10.msg5",
+          "meet10.msg6",
+          "meet10.msg7",
+          "meet10.msg8",
+          "meet10.msg9",
+          "meet10.msg10",
+          "meet10.msg11",
+        ],
+        11: [
+          "meet11.msg1",
+          "meet11.msg2",
+          "meet11.msg3",
+          "meet11.msg4",
+          "meet11.msg5",
+          "meet11.msg6",
+          "meet11.msg7",
+          "meet11.msg8",
+          "meet11.msg9",
+          "meet11.msg10",
+        ],
+        12: [
+          "meet12.msg1",
+          "meet12.msg2",
+          "meet12.msg3",
+          "meet12.msg4",
+          "meet12.msg5",
+          "meet12.msg6",
+          "meet12.msg7",
+          "meet12.msg8",
+          "meet12.msg9",
+          "meet12.msg10",
+        ],
+        13: [
+          "meet13.msg1",
+          "meet13.msg2",
+          "meet13.msg3",
+          "meet13.msg4",
+          "meet13.msg5",
+          "meet13.msg6",
+          "meet13.msg7",
+          "meet13.msg8",
+          "meet13.msg9",
+          "meet13.msg10",
+        ],
+        14: [
+          "meet14.msg1",
+          "meet14.msg2",
+          "meet14.msg3",
+          "meet14.msg4",
+          "meet14.msg5",
+          "meet14.msg6",
+          "meet14.msg7",
+          "meet14.msg8",
+          "meet14.msg9",
+          "meet14.msg10",
+        ],
+        15: [
+          "meet15.msg1",
+          "meet15.msg2",
+          "meet15.msg3",
+          "meet15.msg4",
+          "meet15.msg5",
+          "meet15.msg6",
+          "meet15.msg7",
+          "meet15.msg8",
+          "meet15.msg9",
+          "meet15.msg10",
+          "meet15.msg11",
+          "meet15.msg12",
+        ],
+        16: [
+          "meet16.msg1",
+          "meet16.msg2",
+          "meet16.msg3",
+          "meet16.msg4",
+          "meet16.msg5",
+          "meet16.msg6",
+          "meet16.msg7",
+          "meet16.msg8",
+          "meet16.msg9",
+          "meet16.msg10",
+          "meet16.msg11",
+          "meet16.msg12",
+          "meet16.msg13",
+          "meet16.msg14",
+          "meet16.msg15",
+          "meet16.msg16",
+          "meet16.msg17",
+          "meet16.msg18",
+        ],
+        17: [
+          "meet17.msg1",
+          "meet17.msg2",
+          "meet17.msg3",
+          "meet17.msg4",
+          "meet17.msg5",
+          "meet17.msg6",
+          "meet17.msg7",
+          "meet17.msg8",
+          "meet17.msg9",
+          "meet17.msg10",
+          "meet17.msg11",
+          "meet17.msg12",
+          "meet17.msg13",
+          "meet17.msg14",
+          "meet17.msg15",
+          "meet17.msg16",
+          "meet17.msg17",
+          "meet17.msg18",
+          "meet17.msg19",
+        ],
+      };
+    </script>
+
+    <!-- Floating Social Media Button -->
+    <div
+      id="socialToggle"
+      class="fixed z-50 w-12 h-12 bg-pink-500 rounded-full shadow-lg flex items-center justify-center text-white cursor-pointer hover:rotate-12 hover:scale-110 transition-all duration-300 ease-out bottom-24 md:bottom-6 right-6"
+      title="Sosial Media"
+    >
+      <i class="fas fa-share-alt text-xl"></i>
+    </div>
+
+    <!-- Social Media Popup -->
+    <div
+      id="socialPopup"
+      class="fixed z-50 bg-white dark:bg-gray-800 text-gray-800 dark:text-white rounded-xl shadow-2xl w-64 p-4 hidden flex-col gap-3 transform transition-all duration-500 ease-in-out translate-x-10 opacity-0 bottom-40 md:bottom-24 right-6"
+    >
+      <h3
+        class="text-lg font-bold mb-2 text-pink-600 dark:text-pink-300"
+        data-i18n="social.title"
+      >
+        Temukan Intan di:
+      </h3>
+
+      <a
+        href="https://instagram.com/thdya_"
+        target="_blank"
+        class="flex items-center gap-3 p-2 rounded-lg hover:bg-pink-50 dark:hover:bg-pink-900 transition-all group"
+      >
+        <i
+          class="fab fa-instagram text-pink-500 text-lg group-hover:scale-110 transition-transform"
+        ></i>
+        <span
+          class="group-hover:text-pink-600 transition-colors"
+          data-i18n="social.instagram"
+          >Instagram</span
+        >
+      </a>
+
+      <a
+        href="https://www.tiktok.com/@beliarddra"
+        target="_blank"
+        class="flex items-center gap-3 p-2 rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900 transition-all group"
+      >
+        <i
+          class="fab fa-tiktok text-purple-500 text-lg group-hover:scale-110 transition-transform"
+        ></i>
+        <span
+          class="group-hover:text-purple-600 transition-colors"
+          data-i18n="social.tiktok"
+          >TikTok</span
+        >
+      </a>
+
+      <!-- <a
+        href="#"
+        target="_blank"
+        class="flex items-center gap-3 p-2 rounded-lg hover:bg-green-50 dark:hover:bg-green-900 transition-all group"
+      >
+        <i
+          class="fab fa-whatsapp text-green-500 text-lg group-hover:scale-110 transition-transform"
+        ></i>
+        <span
+          class="group-hover:text-green-600 transition-colors"
+          data-i18n="social.whatsapp"
+          >WhatsApp</span
+        >
+      </a> -->
+    </div>
+
+    <script>
+      const toggleBtn = document.getElementById("socialToggle");
+      const popup = document.getElementById("socialPopup");
+
+      toggleBtn.addEventListener("click", () => {
+        const isHidden = popup.classList.contains("hidden");
+        if (isHidden) {
+          popup.classList.remove("hidden");
+          setTimeout(() => {
+            popup.classList.remove("translate-x-10", "opacity-0");
+          }, 10);
+        } else {
+          popup.classList.add("translate-x-10", "opacity-0");
+          setTimeout(() => {
+            popup.classList.add("hidden");
+          }, 300);
+        }
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!toggleBtn.contains(e.target) && !popup.contains(e.target)) {
+          if (!popup.classList.contains("hidden")) {
+            popup.classList.add("translate-x-10", "opacity-0");
+            setTimeout(() => {
+              popup.classList.add("hidden");
+            }, 300);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
